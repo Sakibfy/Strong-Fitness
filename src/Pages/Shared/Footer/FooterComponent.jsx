@@ -8,7 +8,7 @@ export function FooterComponent() {
   return (
     <Footer container>
       <div className="w-full bg-gray-300">
-        <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 p-4">
+        <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 pl-4">
           <div>
            <h2 className="font-bold text-4xl">Strong Fitness</h2>
           </div>

@@ -14,7 +14,7 @@ export function NavbarComponent() {
       <Navbar fluid rounded className=" relative backdrop-blur-lg bg-gray-600  z-10 bg-opacity-30 max-w-screen-xl items-center text-center ">
       <Navbar.Brand className="flex gap-2" href="https://flowbite-react.com">
         <p><IoIosFitness className="block text-3xl text-[#c3f73a]"></IoIosFitness></p>
-        <span className="italic items-center text-center text-3xl font-bold dark:text-white  text-white"> Strong Fitness </span>
+        <span className="italic items-center text-center text-3xl font-bold dark:text-white  text-white uppercase"> Strong Fitness </span>
         
       </Navbar.Brand>
       <div className=" md:order-2">
