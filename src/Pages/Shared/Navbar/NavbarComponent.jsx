@@ -1,38 +1,65 @@
 
 "use client";
+import { LuLogOut } from "react-icons/lu";
 import { IoIosFitness } from "react-icons/io";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 export function NavbarComponent() {
+  const { user, logOut } = useAuth();
+  const handleLogOut = () => {
+        logOut()
+         .then(() => { })
+        .catch(error => console.log(error));
+        
+    }
   const link = <>
            <li className="text-white text-[17px] italic font-bold">Home</li>
            <li className="text-white text-[17px] italic font-bold">All Trainer</li>
            <li className="text-white text-[17px] italic font-bold">All Classes</li>
   </>
+
+
+  
+  console.log(user);
   return (
     
-      <Navbar fluid rounded className=" relative backdrop-blur-lg bg-gray-600  z-10 bg-opacity-30 max-w-screen-xl items-center text-center ">
-      <Navbar.Brand className="flex gap-2" href="https://flowbite-react.com">
+      <Navbar fluid rounded className=" relative backdrop-blur-sm bg-gray-600 h-[80px]  z-10 bg-opacity-30 max-w-screen-xl items-center text-center ">
+      <Navbar.Brand className="flex gap-2" >
         <p><IoIosFitness className="block text-3xl text-[#c3f73a]"></IoIosFitness></p>
-        <span className="italic items-center text-center text-3xl font-bold dark:text-white  text-white uppercase"> Strong Fitness </span>
+        <Link to={'/'}>
+          <span className="italic items-center text-center text-3xl font-bold dark:text-white  text-white uppercase"> Strong Fitness </span>
+        </Link>
         
       </Navbar.Brand>
-      <div className=" md:order-2">
-        <Dropdown
+      
+      <div className=" md:order-2  flex gap-3">
+        
+        {
+          user ?
+            <Dropdown
           arrowIcon={false}
           inline
-          label={
-            <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
-          }
-        >
-          <Dropdown.Header>
-            <span className="block text-sm">Sakib</span>
-            <span className="block truncate text-sm font-medium">name@flowbite.com</span>
-          <Dropdown.Item>Sign out</Dropdown.Item>
+          label={ <Avatar className="" img={user.
+            photoURL} alt=""  />
+            }>
+          <Dropdown.Header className="mr-12  ">
+            <span className="block text-xl font-bold mb-2 ml-8 uppercase">{user?.displayName}</span>
+            
+            <div className="items-center text-center flex">
+                  <button onClick={handleLogOut} className=" block rounded-md font-bold ml-12 border-b-8 hover:bg-red-600 hover:text-white border-red-700 text-[#ef5350] px-4 py-2 duration-500   my-2 pointer-events-auto">Sign out  </button>
+                  <span className="block text-red-700"><LuLogOut  /></span>
+           </div>
           </Dropdown.Header>
-          {link }
-          
-        </Dropdown>
+            </Dropdown>
+            :
+           <>
+             <NavLink to={'/login'}> <button className=" hover:bg-lime-400 duration-500  bg-lime-300   rounded-md font-bold text-black px-9 py-3 border-lime-300 my-2 ">Login</button></NavLink>
+             <NavLink to={'/registaion'}> <button className=" hover:bg-lime-400 duration-500  bg-lime-300   rounded-md font-bold text-black px-9 py-3 border-lime-300 my-2 ">Register</button></NavLink>
+          </>
+         }
+        
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>

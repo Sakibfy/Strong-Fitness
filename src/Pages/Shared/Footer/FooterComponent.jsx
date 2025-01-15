@@ -6,32 +6,32 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-
 
 export function FooterComponent() {
   return (
-    <Footer container>
-      <div className="w-full bg-gray-300">
+    <Footer container className="bg-black">
+      <div className="w-full bg-gray-200 text-black">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 pl-4">
           <div>
            <h2 className="font-bold text-4xl">Strong Fitness</h2>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
             <div>
-              <Footer.Title title="about" />
+              <Footer.Title className="text-black" title="about" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#">Strong Fitness</Footer.Link>
+                <Footer.Link href="#" className="text-black">Strong Fitness</Footer.Link>
                 
               </Footer.LinkGroup>
             </div>
-            <div>
-              <Footer.Title title="Follow us" />
+            <div className="">
+              <Footer.Title className="text-black" title="Follow us" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#">Github</Footer.Link>
-                <Footer.Link href="#">Discord</Footer.Link>
+                <Footer.Link href="#" className="text-black">Github</Footer.Link>
+                <Footer.Link href="#" className="text-black">Discord</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Title title="Legal" />
+              <Footer.Title className="text-black" title="Legal" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#">Privacy Policy</Footer.Link>
-                <Footer.Link href="#">Terms &amp; Conditions</Footer.Link>
+                <Footer.Link href="#" className="text-black">Privacy Policy</Footer.Link>
+                <Footer.Link href="#" className="text-black">Terms &amp; Conditions</Footer.Link>
               </Footer.LinkGroup>
             </div>
           </div>

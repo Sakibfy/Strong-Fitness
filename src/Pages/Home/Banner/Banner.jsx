@@ -14,7 +14,7 @@ import img3 from  '../../../assets/banner.3.png'
 
 const Banner = () => {
   return (
-    <div className=' -mt-12'>
+    <div className=' -mt-20'>
      
        <>
       <Swiper

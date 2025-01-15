@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "photo": "https://i.ibb.co.com/42HZYq7/reviews-3jpg.jpg",
+    "rating": 5,
+    "review": "This place is fun and challenging and really convenient as you can go to different classes, rather than having to commit to a specific day and time. The teachers are really friendly and they all have their own style of teaching",
+    "date": "2025-01-10"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "photo": "https://i.ibb.co.com/HNt723V/reviewsjpg.jpg",
+    "rating": 4,
+    "review": "I love the community support here. The live coaching sessions are a great bonus, too!",
+    "date": "2025-01-12"
+  },
+  {
+    "id": 3,
+    "name": "Mike Johnson",
+    "photo": "https://i.ibb.co.com/7KSst5y/reviews-1.jpg",
+    "rating": 4.5,
+    "review": "A fantastic platform! The nutrition guidance helped me achieve my goals much faster.",
+    "date": "2025-01-13"
+  }
+  
+]

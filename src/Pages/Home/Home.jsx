@@ -1,3 +1,4 @@
+import Reviews from "../../Component/Reviews/Reviews";
 import About from "./About/About";
 import Banner from "./Banner/Banner";
 import Featured from "./Featured/Featured";
@@ -14,6 +15,9 @@ const Home = () => {
      </div>
       <div className="my-12">
          <About></About>
+     </div>
+      <div className="my-12 ">
+         <Reviews></Reviews>
      </div>
       
     </div>
