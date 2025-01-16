@@ -24,8 +24,8 @@ const [reviews, setReviews] = useState([]);
 
 
   return (
-    <div className="m-3">
-      <h2 className="md:text-6xl text-3xl font-bold italic md:mb-8 mb-4">WHAT CUTOMERS SAY</h2>
+    <div className="m-3 bg-black text-white">
+      <h2 className="md:text-6xl text-3xl font-bold italic md:py-8 mb-4">WHAT CUTOMERS SAY</h2>
       <section>
       <Swiper pagination={{
           type: 'fraction',

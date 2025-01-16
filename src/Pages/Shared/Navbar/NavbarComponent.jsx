@@ -17,24 +17,23 @@ export function NavbarComponent() {
   const link = <>
            <li className="text-white text-[17px] italic font-bold">Home</li>
            <li className="text-white text-[17px] italic font-bold">All Trainer</li>
-           <li className="text-white text-[17px] italic font-bold">All Classes</li>
+          <NavLink to={'/AllClasses'}> <li className="text-white text-[17px] italic font-bold">All Classes</li></NavLink>
   </>
 
 
   
-  console.log(user);
+
   return (
     
-      <Navbar fluid rounded className=" relative backdrop-blur-sm bg-gray-600 h-[80px]  z-10 bg-opacity-30 max-w-screen-xl items-center text-center ">
-      <Navbar.Brand className="flex gap-2" >
-        <p><IoIosFitness className="block text-3xl text-[#c3f73a]"></IoIosFitness></p>
+      <Navbar fluid rounded className="mx-auto relative backdrop-blur-sm  bg-gray-900 h-[80px]  z-10 bg-opacity-30 w-full items-center text-center ">
+     
+       
         <Link to={'/'}>
-          <span className="italic items-center text-center text-3xl font-bold dark:text-white  text-white uppercase"> Strong Fitness </span>
+          <span className="italic items-center text-center text-3xl font-bold dark:text-white  text-white uppercase"> Strong <span className="border-b-4 border-lime-400">Fitness</span> </span>
         </Link>
-        
-      </Navbar.Brand>
+     
       
-      <div className=" md:order-2  flex gap-3">
+      <div className=" md:order-2  flex gap-3 md:mr-20">
         
         {
           user ?

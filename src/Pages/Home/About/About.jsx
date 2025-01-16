@@ -23,7 +23,8 @@ const About = () => {
           <span className='font-bold '>WHO WE ARE</span>
           <h2 className='font-bold md:text-5xl text-black text-3xl border-l-8  pl-2 border-gray-400'>We Will Give You Strength and Health</h2>
           <p className='text-[14px]'>
-            Gymat an unknown printer took a galley type and scraey aretea bled make a type specimen book. May has survived not onlyive centuries but also the leap electronic.Gymatn unknown printer took a galley of type and scraey aretea.
+            Our company is at the forefront of revolutionizing the fitness industry. We are dedicated to providing innovative solutions that empower individuals to lead healthier, more active lifestyles. Combining cutting-edge technology with a passion for fitness, we strive to create a community-driven platform that inspires, motivates, and supports our users on their wellness journey.
+
           </p>
           <li className='text-[20px] text-gray-500 font-semibold'>Gymat an unknown printer</li>
           <li className='text-[20px] text-gray-500 font-semibold'>Scraey aretea bled makea type</li>

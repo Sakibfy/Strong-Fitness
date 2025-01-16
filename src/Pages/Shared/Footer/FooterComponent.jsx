@@ -6,32 +6,32 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-
 
 export function FooterComponent() {
   return (
-    <Footer container className="bg-black">
-      <div className="w-full bg-gray-200 text-black">
+    <Footer container className="bg-[#1b1b1b] text-white ">
+      <div className="w-full bg-[#1b1b1b]">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 pl-4">
           <div>
            <h2 className="font-bold text-4xl">Strong Fitness</h2>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
             <div>
-              <Footer.Title className="text-black" title="about" />
+              <Footer.Title className="" title="about" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#" className="text-black">Strong Fitness</Footer.Link>
+                <Footer.Link href="#" className="">Strong Fitness</Footer.Link>
                 
               </Footer.LinkGroup>
             </div>
             <div className="">
-              <Footer.Title className="text-black" title="Follow us" />
+              <Footer.Title className="" title="Follow us" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#" className="text-black">Github</Footer.Link>
-                <Footer.Link href="#" className="text-black">Discord</Footer.Link>
+                <Footer.Link href="#" className="">Github</Footer.Link>
+                <Footer.Link href="#" className="">Discord</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Title className="text-black" title="Legal" />
+              <Footer.Title className="" title="Legal" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#" className="text-black">Privacy Policy</Footer.Link>
-                <Footer.Link href="#" className="text-black">Terms &amp; Conditions</Footer.Link>
+                <Footer.Link href="#" className="">Privacy Policy</Footer.Link>
+                <Footer.Link href="#" className="">Terms &amp; Conditions</Footer.Link>
               </Footer.LinkGroup>
             </div>
           </div>

@@ -1,0 +1,116 @@
+[
+  {
+    
+    "title": "Yoga",
+    "description": "A relaxing and rejuvenating practice to improve flexibility and mindfulness.",
+    "additionalDetails": "Perfect for all levels. Includes Hatha, Vinyasa, and Power Yoga.",
+    "trainers": [
+      {
+        "id": "101",
+        "name": "Alice Brown",
+        "photo": "https://i.ibb.co.com/9p7N3RV/class-img-5.jpg"
+      },
+      {
+        "id": "102",
+        "name": "Leeile",
+        "photo": "https://i.ibb.co.com/Vx9HzCr/class-img-3.jpg"
+      }
+    ]
+  },
+  {
+  
+    "title": "HIIT",
+    "description": "High-Intensity Interval Training for quick calorie burn and improved stamina.",
+    "additionalDetails": "A mix of cardio and strength exercises for maximum impact.",
+    "trainers": [
+      {
+        
+        "name": "Michael Smith",
+        "photo": "https://i.ibb.co.com/C6WNKPX/class-1-bg.jpg"
+      },
+      {
+       
+        "name": "Sarah Johnson",
+        "photo": "https://i.ibb.co.com/VTz6W9Y/athlete-5.jpg"
+      },
+      {
+        
+        "name": "Chris Evans",
+        "photo": "https://i.ibb.co.com/GPKTsDF/pexels-grzegorz-2777274-5209197.jpg"
+      }
+    ]
+  },
+  {
+   
+    "title": "Zumba",
+    "description": "A fun and energetic dance workout for all skill levels.",
+    "additionalDetails": "Features Latin and international music styles.",
+    "trainers": [
+      {
+        
+        "name": "Emma Davis",
+        "photo": "https://i.ibb.co.com/wyfTXQZ/pexels-olly-3775566.jpg"
+      },
+      {
+        
+        "name": "Liam Martinez",
+        "photo": "https://i.ibb.co.com/422MdfR/pexels-olly-4807082.jpg"
+      }
+    ]
+  },
+  {
+   
+    "title": "Pilates",
+    "description": "Core-strengthening exercises to enhance posture and balance.",
+    "additionalDetails": "Suitable for beginners and advanced practitioners.",
+    "trainers": [
+      {
+        
+        "name": "Sophia Wilson",
+        "photo": "https://i.ibb.co.com/TgQ7qny/pexels-koolshooters-6246651.jpg"
+      },
+      {
+        
+        "name": "Ethan Moore",
+        "photo": "https://i.ibb.co.com/YWgFN6Q/pexels-olly-868483.jpg"
+      }
+    ]
+  },
+  {
+    
+    "title": "Spin Class",
+    "description": "An intense indoor cycling workout for cardio and endurance.",
+    "additionalDetails": "Experience virtual terrains and live challenges.",
+    "trainers": [
+      {
+       
+        "name": "Olivia Taylor",
+        "photo": "https://i.ibb.co.com/vjdJZR1/pexels-jonathanborba-13896069.jpg"
+      },
+      {
+        
+        "name": "Noah Harris",
+        "photo": "https://i.ibb.co.com/C5HDXCC/pexels-julia-larson-6456123.jpg"
+      }
+    ]
+  },
+  {
+   
+    "title": "Strength Training",
+    "description": "Build muscle and strength with targeted workouts and expert guidance.",
+    "additionalDetails": "Includes free weights, machines, and bodyweight exercises.",
+    "trainers": [
+      {
+       
+        "name": "Isabella Jones",
+        "photo": "https://i.ibb.co.com/rmN0NY2/pexels-pixabay-414029.jpg"
+      },
+      {
+       
+        "name": "Mason Garcia",
+        "photo": "https://i.ibb.co.com/zRHJwWn/pexels-victorfreitas-949126.jpg"
+      }
+      
+    ]
+  }
+]

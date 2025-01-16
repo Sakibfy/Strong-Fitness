@@ -5,3 +5,12 @@
 
 
 
+body{
+   font-family: "Oswald", serif;
+ 
+}
+a.active{
+   border-bottom: 4px solid black;
+   padding-bottom: 5px;
+   color: grey;
+}
