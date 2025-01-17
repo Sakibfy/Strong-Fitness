@@ -9,10 +9,11 @@ import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import AllClasses from "../Component/AllClasses/AllClasses";
 import AllTrainer from "../Component/AllTrainer/AllTrainer";
-import PrivateRoute from "./PrivateRoute";
+
 import Dashboard from "../Layout/Dashboard";
 
 import AddNewClass from "../Component/Admin/AddNewClass";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -48,8 +49,10 @@ export const router = createBrowserRouter([
   },
      // dashboard
   {
-    path: 'Dashboard',
-    element: <Dashboard></Dashboard> ,
+    path: '/Dashboard',
+    element: <PrivateRoute>
+      <Dashboard></Dashboard>
+    </PrivateRoute>,
     children: [
       {
         path: 'AddNewClass',

@@ -12,5 +12,9 @@ body{
 a.active{
    border-bottom: 4px solid black;
    padding-bottom: 5px;
-   color: grey;
+   color: white;
+}
+
+input:placeholder-shown,textarea{
+   border-radius: 10px;
 }

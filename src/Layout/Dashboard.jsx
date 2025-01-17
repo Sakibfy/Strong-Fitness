@@ -17,44 +17,44 @@ const Dashboard = () => {
   return (
      <div className="flex ">
       {/* left side start*/}
-      <div className=" w-60 min-h-screen bg-blue-600 text-white">
-        <ul className="menu p-8  space-y-2 uppercase ">
+      <div className=" md:w-60 w-36 min-h-screen bg-blue-600 text-white">
+        <ul className="menu p-4 md:p-8   space-y-4 mt-3 uppercase ">
           {/* share dashboard start */}
           {
             isAdmin ?
               <>
               <li>
-            <NavLink to='/dashboard/adminHome'><FaHome/>All Newsletter</NavLink>
+            <NavLink to='/dashboard/adminHome'>All Newsletter</NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/addItems'><FaUtensils /> All Trainer</NavLink>
+            <NavLink to='/dashboard/addItems'> All Trainer</NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/manageItems'><FaList />Applicd Trainer </NavLink>
+            <NavLink to='/dashboard/manageItems'>Applicd Trainer </NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/Booking'><FaBook /> Balance</NavLink>
+            <NavLink to='/dashboard/Booking'> Balance</NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/users'><FaUsers /> Add New Class</NavLink>
+            <NavLink to='/dashboard/AddNewClass'>Add New Class</NavLink>
           </li>
              </>
               :
               <>
                 <li>
-            <NavLink to='/dashboard/UserHome'><IoMdHome></IoMdHome> User Home</NavLink>
+            <NavLink to='/dashboard/UserHome'> User Home</NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/history'><FaCalendarAlt></FaCalendarAlt> Not History</NavLink>
+            <NavLink to='/dashboard/history'> Not History</NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/cart'><RiShoppingCart2Fill></RiShoppingCart2Fill> My Cart </NavLink>
+            <NavLink to='/dashboard/cart'> My Cart </NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/review'><MdReviews /> Add Review</NavLink>
+            <NavLink to='/dashboard/review'> Add Review</NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/paymenthistory'><TbBrandBooking />Real Payment Histroy</NavLink>
+            <NavLink to='/dashboard/paymenthistory'>Real Payment Histroy</NavLink>
           </li>
               </>
           }
@@ -77,7 +77,7 @@ const Dashboard = () => {
       </div>
       {/* left side end*/}
       {/* Right side Start*/}
-      <div className="flex-1 p-12  bg-slate-200">
+      <div className="flex-1 md:p-12   bg-slate-200">
         <Outlet></Outlet>
       </div>
       {/* Right side End*/}
