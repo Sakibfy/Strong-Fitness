@@ -8,6 +8,12 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import AllClasses from "../Component/AllClasses/AllClasses";
+import AllTrainer from "../Component/AllTrainer/AllTrainer";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
+
+import AddNewClass from "../Component/Admin/AddNewClass";
+
 
 export const router = createBrowserRouter([
   {
@@ -23,16 +29,33 @@ export const router = createBrowserRouter([
         path: 'AllClasses',
         element: <AllClasses></AllClasses>
       },
+      {
+        path: 'AllTrainer',
+        element: <AllTrainer></AllTrainer>
+      },
+    
      
     ]
     
   },
    {
-        path: '/login',
-        element: <Login></Login>
-      },
+     path: '/login',
+     element: <Login></Login>
+   },
+   {
+     path: '/registaion',
+     element: <Registration></Registration>
+  },
+     // dashboard
+  {
+    path: 'Dashboard',
+    element: <Dashboard></Dashboard> ,
+    children: [
       {
-        path: '/registaion',
-        element: <Registration></Registration>
-      },
+        path: 'AddNewClass',
+        element:<AddNewClass></AddNewClass>
+     }
+    ]
+  }  
+ 
 ]);

@@ -15,9 +15,10 @@ export function NavbarComponent() {
         
     }
   const link = <>
-           <li className="text-white text-[17px] italic font-bold">Home</li>
-           <li className="text-white text-[17px] italic font-bold">All Trainer</li>
+           <NavLink to={'/'}><li className="text-white text-[17px] italic font-bold">Home</li></NavLink>
+           <NavLink to={'/AllTrainer'}><li className="text-white text-[17px] italic font-bold">All Trainer</li></NavLink>
           <NavLink to={'/AllClasses'}> <li className="text-white text-[17px] italic font-bold">All Classes</li></NavLink>
+          <NavLink to={'/Dashboard/AddNewClass'}> <li className="text-white text-[17px] italic font-bold">Dashboard</li></NavLink>
   </>
 
 

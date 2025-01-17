@@ -1,3 +1,4 @@
+
 import { useNavigate } from "react-router-dom";
 import useClasses from "../../hooks/useClasses";
 
@@ -5,7 +6,7 @@ import useClasses from "../../hooks/useClasses";
 
 const AllClasses = () => {
   const [dataClass] = useClasses()
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   console.log(dataClass);
   
   return (
@@ -27,7 +28,7 @@ const AllClasses = () => {
                         src={trainer.photo}
                         alt={trainer.name}
                         className="w-24 h-24 rounded cursor-pointer"
-                        // onClick={() => navigate(`/trainers/${trainer._id}`)}
+                        onClick={() => navigate(`/trainers/${trainer._id}`)}
                     />
                     <h4>{ trainer.name}</h4>
                    </div>
