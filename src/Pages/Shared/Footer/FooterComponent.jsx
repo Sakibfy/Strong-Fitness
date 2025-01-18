@@ -6,7 +6,7 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-
 
 export function FooterComponent() {
   return (
-    <Footer container className="bg-[#1b1b1b] text-white ">
+    <Footer container className="bg-[#1b1b1b] text-white rounded-none">
       <div className="w-full bg-[#1b1b1b]">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 pl-4">
           <div>

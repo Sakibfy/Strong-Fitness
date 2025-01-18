@@ -1,9 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { RiShoppingCart2Fill } from "react-icons/ri";
-import { IoMdHome } from "react-icons/io";
-import { FaBook, FaCalendarAlt, FaHome, FaList, FaUsers, FaUtensils } from "react-icons/fa";
-import { MdReviews } from "react-icons/md";
-import { TbBrandBooking } from "react-icons/tb";
+
 import { FaShoppingBag } from "react-icons/fa";
 import { TiThMenu } from "react-icons/ti";
 import { MdContactPhone } from "react-icons/md";
@@ -59,7 +55,7 @@ const Dashboard = () => {
               </>
           }
           
-          {/* share dashboard end */}
+         
           <div className="divider"></div>
           <li>
             <NavLink to='/'><FiHome />  Home</NavLink>

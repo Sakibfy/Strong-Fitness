@@ -1,129 +1,77 @@
 [
   {
-    "id": "1",
-    "name": "Alice Brown",
-    "profileImage": "https://example.com/photos/alice.jpg",
-    "yearsOfExperience": 8,
-    "socialLinks": {
-      "facebook": "https://facebook.com/alice",
-      "twitter": "https://twitter.com/alice",
-      "instagram": "https://instagram.com/alice"
-    },
-    "availableSlots": "Mon, Wed, Fri - 10:00 AM to 12:00 PM"
-  },
-  {
-    "id": "2",
-    "name": "Michael Smith",
-    "profileImage": "https://example.com/photos/michael.jpg",
-    "yearsOfExperience": 10,
-    "socialLinks": {
-      "facebook": "https://facebook.com/michael",
-      "twitter": "https://twitter.com/michael",
-      "instagram": "https://instagram.com/michael"
-    },
-    "availableSlots": "Tue, Thu - 1:00 PM to 3:00 PM"
-  },
-  {
-    "id": "3",
-    "name": "Sophia Wilson",
-    "profileImage": "https://example.com/photos/sophia.jpg",
-    "yearsOfExperience": 6,
-    "socialLinks": {
-      "facebook": "https://facebook.com/sophia",
-      "twitter": "https://twitter.com/sophia",
-      "instagram": "https://instagram.com/sophia"
-    },
-    "availableSlots": "Sat, Sun - 9:00 AM to 11:00 AM"
-  },
-   {
-    "id": "4",
-    "name": "Liam Johnson",
-    "profileImage": "https://example.com/photos/liam.jpg",
-    "yearsOfExperience": 7,
-    "socialLinks": {
-      "facebook": "https://facebook.com/liam",
-      "twitter": "https://twitter.com/liam",
-      "instagram": "https://instagram.com/liam"
-    },
-    "availableSlots": "Mon, Wed, Fri - 2:00 PM to 4:00 PM",
-    "additionalInfo": "Certified in weight training and bodybuilding."
-  },
-  {
-    "id": "5",
-    "name": "Emma Davis",
-    "profileImage": "https://example.com/photos/emma.jpg",
-    "yearsOfExperience": 9,
-    "socialLinks": {
-      "facebook": "https://facebook.com/emma",
-      "twitter": "https://twitter.com/emma",
-      "instagram": "https://instagram.com/emma"
-    },
-    "availableSlots": "Tue, Thu - 10:00 AM to 12:00 PM",
-    "additionalInfo": "Expert in Zumba and dance fitness."
-  },
-  {
-    "id": "6",
-    "name": "Noah White",
-    "profileImage": "https://example.com/photos/noah.jpg",
-    "yearsOfExperience": 12,
-    "socialLinks": {
-      "facebook": "https://facebook.com/noah",
-      "twitter": "https://twitter.com/noah",
-      "instagram": "https://instagram.com/noah"
-    },
-    "availableSlots": "Sat, Sun - 3:00 PM to 5:00 PM",
-    "additionalInfo": "Specializes in Pilates and core strength training."
-  },
-  {
-    "id": "7",
-    "name": "Olivia Martinez",
-    "profileImage": "https://example.com/photos/olivia.jpg",
-    "yearsOfExperience": 5,
-    "socialLinks": {
-      "facebook": "https://facebook.com/olivia",
-      "twitter": "https://twitter.com/olivia",
-      "instagram": "https://instagram.com/olivia"
-    },
-    "availableSlots": "Mon, Fri - 6:00 PM to 8:00 PM",
-    "additionalInfo": "Focused on yoga and mindfulness practices."
-  },
-  {
-    "id": "8",
-    "name": "James Brown",
-    "profileImage": "https://example.com/photos/james.jpg",
-    "yearsOfExperience": 15,
-    "socialLinks": {
-      "facebook": "https://facebook.com/james",
-      "twitter": "https://twitter.com/james",
-      "instagram": "https://instagram.com/james"
-    },
-    "availableSlots": "Wed, Sat - 8:00 AM to 10:00 AM",
-    "additionalInfo": "Renowned personal trainer with expertise in HIIT."
-  },
-  {
-    "id": "9",
+    
     "name": "Sophia Lee",
-    "profileImage": "https://example.com/photos/sophia.jpg",
-    "yearsOfExperience": 4,
-    "socialLinks": {
-      "facebook": "https://facebook.com/sophia",
-      "twitter": "https://twitter.com/sophia",
-      "instagram": "https://instagram.com/sophia"
-    },
-    "availableSlots": "Tue, Thu - 5:00 PM to 7:00 PM",
-    "additionalInfo": "Specialist in dance aerobics and stretching exercises."
+    "profileImage": "https://i.ibb.co.com/9p7N3RV/class-img-5.jpg",
+     "expertise": ["Yoga", "Mindfulness", "Personal Training"],
+    "experience": 5,
+    "socialLinks": [
+      { "platform": "facebook", "url": "https://facebook.com/sophia" },
+      { "platform": "twitter", "url": "https://twitter.com/sophia" },
+      { "platform": "linkedin", "url": "https://linkedin.com/in/sophia" }
+    ],
+    "availableSlots": "Monday - Friday, 9 AM to 5 PM"
   },
   {
-    "id": "10",
-    "name": "William Garcia",
-    "profileImage": "https://example.com/photos/william.jpg",
-    "yearsOfExperience": 10,
-    "socialLinks": {
-      "facebook": "https://facebook.com/william",
-      "twitter": "https://twitter.com/william",
-      "instagram": "https://instagram.com/william"
-    },
-    "availableSlots": "Fri, Sat - 9:00 AM to 11:00 AM",
-    "additionalInfo": "Expert in strength and endurance training."
+   
+    "name": "Michael Brown",
+    "profileImage": "https://i.ibb.co.com/C6WNKPX/class-1-bg.jpg",
+    "expertise": ["Strength Training", "Weightlifting", "Muscle Building"],
+    "experience": 8,
+    "socialLinks": [
+      { "platform": "instagram", "url": "https://instagram.com/michael" },
+      { "platform": "linkedin", "url": "https://linkedin.com/in/michael" }
+    ],
+    "availableSlots": "Weekends, 10 AM to 4 PM"
+  },
+  {
+    
+    "name": "Emma Davis",
+    "profileImage": "https://i.ibb.co.com/Vx9HzCr/class-img-3.jpg",
+     "expertise": ["Pilates", "Flexibility Training", "Posture Correction"],
+    "experience": 3,
+    "socialLinks": [
+      { "platform": "facebook", "url": "https://facebook.com/emma" },
+      { "platform": "twitter", "url": "https://twitter.com/emma" }
+    ],
+    "availableSlots": "Tuesday - Thursday, 1 PM to 7 PM"
+  },
+  {
+    
+    "name": "Oliver Martinez",
+    "profileImage": "https://i.ibb.co.com/C6WNKPX/class-1-bg.jpg",
+    "expertise": ["CrossFit", "HIIT", "Endurance Training"],
+    "experience": 7,
+    "socialLinks": [
+      { "platform": "facebook", "url": "https://facebook.com/oliver" },
+      { "platform": "instagram", "url": "https://instagram.com/oliver" },
+      { "platform": "linkedin", "url": "https://linkedin.com/in/oliver" }
+    ],
+    "availableSlots": "Monday - Friday, 10 AM to 6 PM"
+  },
+  {
+    
+    "name": "Isabella Wilson",
+    "profileImage": "https://i.ibb.co.com/VTz6W9Y/athlete-5.jpg",
+    "expertise": ["Zumba", "Dance Fitness", "Cardio"],
+    "experience": 4,
+    "socialLinks": [
+      { "platform": "twitter", "url": "https://twitter.com/isabella" },
+      { "platform": "instagram", "url": "https://instagram.com/isabella" }
+    ],
+    "availableSlots": "Weekends, 9 AM to 3 PM"
+  },
+  {
+    
+    "name": "Oliver Brown",
+    "profileImage": "https://i.ibb.co.com/wyfTXQZ/pexels-olly-3775566.jpg",
+    "expertise": ["Functional Fitness", "Weight Loss", "Personal Training"],
+    "experience": 6,
+    "socialLinks": [
+      { "platform": "linkedin", "url": "https://linkedin.com/in/liam" },
+      { "platform": "facebook", "url": "https://facebook.com/liam" }
+    ],
+    "availableSlots": "Monday - Thursday, 12 PM to 8 PM"
   }
+  
 ]

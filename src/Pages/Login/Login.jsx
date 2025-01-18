@@ -16,7 +16,7 @@ const {singIn } = useContext(AuthContext);
   console.log('state in the location', location.state);
 
   const handleLogin = (event) => {
-  console.log('dshdh');
+ 
     event.preventDefault()
     const form = event.target;
     const email = form.email.value

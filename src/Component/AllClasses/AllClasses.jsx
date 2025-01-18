@@ -6,26 +6,9 @@ import useClasses from "../../hooks/useClasses";
 const AllClasses = () => {
   const [dataClass] = useClasses()
   // const navigate = useNavigate()
-    // onClick={() => navigate(`/trainers/${trainer._id}`)}
-  console.log(dataClass);
+  // onClick={() => navigate(`/trainers/${trainer._id}`)}
+ 
   
-// _id
-// 6789f848b7e4c2f31b522b7a
-// name
-// "yoga for beginer"
-// image
-// "https://i.ibb.co.com/z5dTm1x/pexels-olly-868483.jpg"
-// category
-// "yoga"
-// details
-// "fsdfsdfsdfrtretretertrevgc "
-// schedule
-// "Mon, Wed, Fri - 6:00 PM to 7:00 PM"
-// trainerName
-// "sakib"
-// duration
-// "60 minutes"
-
 
   return (
     <div className=" bg-[#242322] my-4">
