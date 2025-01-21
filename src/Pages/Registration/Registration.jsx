@@ -3,26 +3,50 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 import SocialLogin from "../../Component/SocialLogin";
 
 const Registration = () => {
-    
+    const axiosPublic = useAxiosPublic();
     const { register, handleSubmit, reset, formState: { errors }, } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
    
     const navigate = useNavigate()
     
     const onSubmit = data => {
-        console.log(data);
+        console.log(data.
+photoURL
+);
         createUser(data.email, data.password)
             .then(resul => {
                 const loggedUser = resul.user;
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL) 
                     .then(() => {
-                    reset()
-                     navigate('/')
+                        // create user entry in the database
+                      
+                        const userinfo = {
+                            name: data.name,
+                            email: data.email,
+                            role: 'member',
+                        }
+                        axiosPublic.post('/users', userinfo)
+                         .then(res => {
+                             if (res.data.insertedId) {
+                            console.log('user added to the database');     
+                           reset()
+                           Swal.fire({
+                           position: "top-end",
+                           icon: "success",
+                           title: "User create successfully",
+                           showConfirmButton: false,
+                           timer: 1500
+                           });
+                            navigate('/');
+                           }
+                           })
                        
                     })
                 .catch(error=> console.log(error))
@@ -42,7 +66,7 @@ return (
  <h1 className="text-5xl font-bold text-center my-6">Sign up now!</h1>
  
     </div>
- <div className=" shadow-2xl bg-base-100 border rounded-3xl md:w-5/12 mx-auto ">
+ <div className=" shadow-2xl bg-base-100 border rounded-3xl lg:w-6/12 md:w-8/12 mx-auto ">
  <form onSubmit={handleSubmit(onSubmit)} className=" p-5 w-10/12 mx-auto  mt-4">
      <div className="">
          <label className="label">
@@ -55,7 +79,7 @@ return (
          <label className="label">
              <span className="label-text">Photo URL</span>
          </label>
-         <input type="text" name="photoURL"  {...register("photoURL", { required: true })} placeholder="Photo URL" className="rounded-lg my-2 w-full" />
+         <input type="text"  {...register("photoURL", { required: true })} placeholder="Photo URL" className="rounded-lg my-2 w-full" />
          {errors.photoURL && <span className="text-red-600">Photo URL is required</span>}
      </div>
      <div className="">

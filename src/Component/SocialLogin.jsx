@@ -1,16 +1,25 @@
 import useAuth from "../hooks/useAuth";
-
 import { useNavigate } from "react-router-dom";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 const SocialLogin = () => {
   const { googleSingIn } = useAuth();
-  
+  const axiosPublic = useAxiosPublic()
   const navigate = useNavigate()
   const handleGoogleSingIn = () => {
     googleSingIn()
       .then(result => {
-       console.log(result);
-         navigate('/')
+        console.log(result);
+        const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName,
+          role: 'member'
+        }
+        axiosPublic.post('/users', userInfo)
+          .then(res => {
+          console.log(res.data);
+          navigate('/')
+        })
         
     })
 }

@@ -13,6 +13,7 @@ const useClasses = () => {
       return  res.data
     }
   })
+  console.log(dataClass);
   return [dataClass]
 };
 

@@ -1,13 +1,13 @@
 
 "use client";
 import { LuLogOut } from "react-icons/lu";
-import { IoIosFitness } from "react-icons/io";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 export function NavbarComponent() {
   const { user, logOut } = useAuth();
+  
   const handleLogOut = () => {
         logOut()
          .then(() => { })
@@ -17,11 +17,16 @@ export function NavbarComponent() {
   const link = <>
            <NavLink to={'/'}><li className="text-white text-[17px] italic font-bold">Home</li></NavLink>
            <NavLink to={'/AllTrainer'}><li className="text-white text-[17px] italic font-bold">All Trainer</li></NavLink>
-          <NavLink to={'/AllClasses'}> <li className="text-white text-[17px] italic font-bold">All Classes</li></NavLink>
-          <NavLink to={'/dashboard/addNewClass'}> <li className="text-white text-[17px] italic font-bold">Dashboard</li></NavLink>
+    <NavLink to={'/AllClasses'}> <li className="text-white text-[17px] italic font-bold">All Classes</li></NavLink>
+    <NavLink to={'dashboard/addNewClass'}> <li className="text-white text-[17px] italic font-bold">Dashboard</li></NavLink>
+    
+   
+     
   </>
 
-
+// {
+//       user && isAdmin && <NavLink to={'/dashboard/AdminHome'}> <li>Dashboard</li></NavLink> 
+//     }
   
 
   return (

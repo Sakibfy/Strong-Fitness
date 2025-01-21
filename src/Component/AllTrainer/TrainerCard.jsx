@@ -1,23 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 const TrainerCard = ({ trainer }) => {
   
-
-
-    
-  //   "name": "Sophia Lee",
-  //   "profileImage": "https://i.ibb.co.com/9p7N3RV/class-img-5.jpg",
-  //    "expertise": ["Yoga", "Mindfulness", "Personal Training"],
-  //   "experience": 5,
-  //   "socialLinks": [
-  //     { "platform": "facebook", "url": "https://facebook.com/sophia" },
-  //     { "platform": "twitter", "url": "https://twitter.com/sophia" },
-  //     { "platform": "linkedin", "url": "https://linkedin.com/in/sophia" }
-  //   ],
-  //   "availableSlots": "Monday - Friday, 9 AM to 5 PM"
-  // },
-
-
 
   return (
      <div className="p-4  bg-white shadow-md rounded-lg">
@@ -53,12 +38,13 @@ const TrainerCard = ({ trainer }) => {
         {trainer.availableSlots}
       </p>
       {/* Know More Button */}
-      <button
-        onClick={() => window.location.href = `/trainer/${trainer.id}`}
+      <Link to={`/trainer/${trainer._id}`}>
+        <button
+       
         className="w-full mt-4 bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 duration-200"
       >
         Know More
-      </button>
+      </button></Link>
     </div>
   );
 };

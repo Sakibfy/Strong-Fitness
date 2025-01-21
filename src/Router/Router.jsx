@@ -12,8 +12,11 @@ import AllTrainer from "../Component/AllTrainer/AllTrainer";
 
 import Dashboard from "../Layout/Dashboard";
 
-import AddNewClass from "../Component/Admin/AddNewClass";
+import AddNewClass from "../Pages/Dashboard/Admin/AddNewClass";
 import PrivateRoute from "./PrivateRoute";
+import TrainerDetails from "../Component/TrainerDetails/TrainerDetails";
+import ActiveiteLogPage from "../Pages/Dashboard/Member/ActiveiteLogPage";
+import ManageSlots from "../Pages/Dashboard/Trainer/ManageSlots";
 
 
 export const router = createBrowserRouter([
@@ -34,6 +37,10 @@ export const router = createBrowserRouter([
         path: 'AllTrainer',
         element: <AllTrainer></AllTrainer>
       },
+      {
+        path: 'trainerdetails',
+        element: <TrainerDetails></TrainerDetails>
+      }
     
      
     ]
@@ -54,10 +61,22 @@ export const router = createBrowserRouter([
       <Dashboard></Dashboard>
     </PrivateRoute>,
     children: [
+    // admin route
       {
         path: 'addNewClass',
         element:<AddNewClass></AddNewClass>
-     }
+      },
+      // trainer route
+      {
+        path: 'manageslots',
+        element: <ManageSlots></ManageSlots>
+      },
+      
+      // member route
+      {
+        path: 'activitylogpage',
+        element: <ActiveiteLogPage></ActiveiteLogPage>
+      },
     ]
   }  
  

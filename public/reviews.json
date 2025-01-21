@@ -1,0 +1,134 @@
+[
+  {
+ 
+  "name": "Sophia Lee",
+  "profileImage": "https://example.com/sophia.jpg",
+  "details": "Sophia is a certified fitness trainer with over 5 years of experience. She specializes in yoga, mindfulness, and helping clients achieve their personal fitness goals.",
+  "expertise": ["Yoga", "Mindfulness", "Personal Training"],
+  "availableSlots": [
+    "Monday 10:00 AM - 11:00 AM",
+    "Tuesday 2:00 PM - 3:00 PM",
+    "Wednesday 4:00 PM - 5:00 PM",
+    "Thursday 6:00 PM - 7:00 PM",
+    "Friday 8:00 AM - 9:00 AM"
+  ],
+  "socialLinks": [
+    { "platform": "instagram", "url": "https://instagram.com/sophia" },
+    { "platform": "linkedin", "url": "https://linkedin.com/in/sophia" },
+    { "platform": "facebook", "url": "https://facebook.com/sophia" }
+  ],
+  "yearsOfExperience": 5,
+  "certifications": ["Certified Yoga Instructor", "Mindfulness Coach"],
+  "languagesSpoken": ["English", "Spanish"],
+  "contactEmail": "sophia.lee@example.com",
+  "otherInfo": "Sophia is passionate about holistic fitness and believes in integrating physical, mental, and emotional well-being."
+}
+,
+{
+  
+  "name": "Michael Carter",
+  "profileImage": "https://example.com/michael.jpg",
+  "details": "Michael is a professional strength and conditioning coach with 8+ years of experience. He specializes in weight training and muscle building.",
+  "expertise": ["Strength Training", "Weightlifting", "Muscle Building"],
+  "availableSlots": [
+    "Monday 9:00 AM - 10:00 AM",
+    "Wednesday 1:00 PM - 2:00 PM",
+    "Friday 3:00 PM - 4:00 PM"
+  ],
+  "socialLinks": [
+    { "platform": "instagram", "url": "https://instagram.com/michael" },
+    { "platform": "linkedin", "url": "https://linkedin.com/in/michael" }
+  ],
+  "yearsOfExperience": 8,
+  "certifications": ["Certified Strength and Conditioning Specialist (CSCS)"],
+  "languagesSpoken": ["English"],
+  "contactEmail": "michael.carter@example.com",
+  "otherInfo": "Michael believes in progressive overload principles and customizes plans for his clients to achieve long-term fitness goals."
+},
+{
+  
+  "name": "Ava Johnson",
+  "profileImage": "https://example.com/ava.jpg",
+  "details": "Ava is a Pilates expert with a passion for helping people improve their posture and flexibility. She has been teaching Pilates for over 6 years.",
+  "expertise": ["Pilates", "Flexibility Training", "Posture Correction"],
+  "availableSlots": [
+    "Tuesday 10:00 AM - 11:00 AM",
+    "Thursday 2:00 PM - 3:00 PM",
+    "Saturday 9:00 AM - 10:00 AM"
+  ],
+  "socialLinks": [
+    { "platform": "facebook", "url": "https://facebook.com/ava" },
+    { "platform": "instagram", "url": "https://instagram.com/ava" }
+  ],
+  "yearsOfExperience": 6,
+  "certifications": ["Pilates Instructor Certification"],
+  "languagesSpoken": ["English", "French"],
+  "contactEmail": "ava.johnson@example.com",
+  "otherInfo": "Ava is dedicated to helping her clients achieve a strong core and overall balance through consistent Pilates practice."
+}
+,
+{
+  
+  "name": "Daniel Smith",
+  "profileImage": "https://example.com/daniel.jpg",
+  "details": "Daniel is a certified CrossFit coach who focuses on high-intensity functional training. He has been training individuals and groups for over a decade.",
+  "expertise": ["CrossFit", "HIIT", "Endurance Training"],
+  "availableSlots": [
+    "Monday 7:00 AM - 8:00 AM",
+    "Thursday 5:00 PM - 6:00 PM",
+    "Saturday 10:00 AM - 11:00 AM"
+  ],
+  "socialLinks": [
+    { "platform": "linkedin", "url": "https://linkedin.com/in/daniel" },
+    { "platform": "twitter", "url": "https://twitter.com/daniel" }
+  ],
+  "yearsOfExperience": 10,
+  "certifications": ["CrossFit Level 1 Trainer"],
+  "languagesSpoken": ["English", "German"],
+  "contactEmail": "daniel.smith@example.com",
+  "otherInfo": "Daniel designs training regimens to maximize performance while minimizing the risk of injury."
+}
+,{
+  
+  "name": "Emma Williams",
+  "profileImage": "https://example.com/emma.jpg",
+  "details": "Emma is a certified Zumba instructor who brings energy and fun to every workout. Her goal is to make fitness enjoyable for everyone.",
+  "expertise": ["Zumba", "Dance Fitness", "Cardio"],
+  "availableSlots": [
+    "Tuesday 6:00 PM - 7:00 PM",
+    "Friday 10:00 AM - 11:00 AM",
+    "Sunday 4:00 PM - 5:00 PM"
+  ],
+  "socialLinks": [
+    { "platform": "instagram", "url": "https://instagram.com/emma" },
+    { "platform": "facebook", "url": "https://facebook.com/emma" }
+  ],
+  "yearsOfExperience": 4,
+  "certifications": ["Zumba Fitness Certification"],
+  "languagesSpoken": ["English", "Spanish"],
+  "contactEmail": "emma.williams@example.com",
+  "otherInfo": "Emma loves combining fitness with music to create an exciting and motivating experience for her clients."
+},
+{
+  
+  "name": "Oliver Brown",
+  "profileImage": "https://example.com/oliver.jpg",
+  "details": "Oliver is a professional personal trainer with expertise in functional fitness and weight loss. He has a decade of experience helping clients achieve sustainable health goals.",
+  "expertise": ["Functional Fitness", "Weight Loss", "Personal Training"],
+  "availableSlots": [
+    "Monday 8:00 AM - 9:00 AM",
+    "Wednesday 3:00 PM - 4:00 PM",
+    "Friday 6:00 PM - 7:00 PM"
+  ],
+  "socialLinks": [
+    { "platform": "instagram", "url": "https://instagram.com/oliver" },
+    { "platform": "linkedin", "url": "https://linkedin.com/in/oliver" }
+  ],
+  "yearsOfExperience": 10,
+  "certifications": ["Certified Personal Trainer (NASM)", "Nutrition Specialist"],
+  "languagesSpoken": ["English", "Italian"],
+  "contactEmail": "oliver.brown@example.com",
+  "otherInfo": "Oliver takes a holistic approach to fitness, emphasizing mental and physical well-being in his training programs."
+}
+
+]

@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 
 import Swal from 'sweetalert2'
-import useAxiosSecure from "../../hooks/useAxiosSecure";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
@@ -10,7 +10,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 
 const AddNewClass = () => {
 
-const { register, handleSubmit , reset} = useForm()
+  const { register, handleSubmit , reset} = useForm()
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
 
@@ -90,7 +90,7 @@ const { register, handleSubmit , reset} = useForm()
     
           </div>
         <input {...register("trainerName",{required:true})}
-          type="text" placeholder="session" className="input input-bordered w-full max-w-xl" />
+          type="text" placeholder="Trainer name" className="input input-bordered w-full max-w-xl" />
              </label>
          
             </div>
@@ -127,9 +127,9 @@ const { register, handleSubmit , reset} = useForm()
   <div className="label">
     
   <div>
-                <input
-                  {...register("image",{required:true})}
-                  type="file" className="my-4 file-input file-input-bordered w-full max-w-xs" />
+     <input
+       {...register("image",{required:true})}
+       type="file" className="my-4 file-input file-input-bordered w-full max-w-xs" />
   </div>
   </div>
 </label>
