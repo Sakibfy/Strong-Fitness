@@ -6,11 +6,10 @@ import useClasses from "../../hooks/useClasses";
 
 const AllClasses = () => {
   const [dataClass] = useClasses()
-  // const navigate = useNavigate()
-  // onClick={() => navigate(`/trainers/${trainer._id}`)}
-
-
   
+
+
+ 
   
   return (
     <div className=" bg-[#242322] my-4">
@@ -23,10 +22,11 @@ const AllClasses = () => {
             <img src={classItem.image} className="rounded-lg w-[300px] h-[250px] cursor-pointer hover:scale-x-105 duration-500 object-cover" alt="" />
             <div className="text-left text-white mt-4 space-y-2">           
               <h3 className="text-xl">{classItem.name}</h3>     
+              <h3 className="text-xl">{classItem._id}</h3>     
               <h3 className="text-[14px] ">{classItem.details}</h3> 
               <h3 className="text-[20px] ">Category: {classItem.category}</h3> 
               <h3 className="underline cursor-pointer"> {classItem.trainerName}</h3>
-             <Link to={`classItem/${classItem.trainerId}`}><img className="rounded-full w-10 h-10 mt-2" src={classItem.trainerImage} alt="" /></Link> 
+             <Link to={`/trainerdetails/${classItem._id}`}><img className="rounded-full w-16 h-16 mt-2" src={classItem.trainerImage} alt="" /></Link> 
             </div> 
         </div>
     ))}

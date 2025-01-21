@@ -17,6 +17,8 @@ import PrivateRoute from "./PrivateRoute";
 import TrainerDetails from "../Component/TrainerDetails/TrainerDetails";
 import ActiveiteLogPage from "../Pages/Dashboard/Member/ActiveiteLogPage";
 import ManageSlots from "../Pages/Dashboard/Trainer/ManageSlots";
+import TrainerBooked from "../Component/TrainerBooked/TrainerBooked";
+import BecomeATrainer from "../Pages/Dashboard/BecomeATrainer/BecomeATrainer";
 
 
 export const router = createBrowserRouter([
@@ -38,9 +40,19 @@ export const router = createBrowserRouter([
         element: <AllTrainer></AllTrainer>
       },
       {
-        path: 'trainerdetails',
-        element: <TrainerDetails></TrainerDetails>
-      }
+        path: '/trainerdetails/:id',
+        element: <TrainerDetails></TrainerDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/alltrainer/${params.id}`)
+      },
+      {
+        path: "/trainer/:id/book",
+        element: <TrainerBooked></TrainerBooked>
+      },
+      {
+        path: "/become-a-trainer",
+        element: <BecomeATrainer></BecomeATrainer>
+      },
+      
     
      
     ]

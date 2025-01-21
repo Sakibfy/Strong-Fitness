@@ -5,18 +5,18 @@ const TrainerCard = ({ trainer }) => {
   
 
   return (
-     <div className="p-4  bg-white shadow-md rounded-lg">
+     <div className="p-2  bg-white shadow-md rounded-lg ">
       {/* Profile Image */}
       <img
         src={trainer.profileImage}
         alt={trainer.name}
-        className="w-36 h-36 hover:scale-110 duration-500 mx-auto rounded-3xl object-cover"
+        className="w-36 h-44  hover:scale-110 duration-500 mx-auto rounded-3xl object-fill"
       />
       {/* Trainer Name */}
-      <h3 className="text-xl font-semibold text-center mt-4">{trainer.name}</h3>
+      <h3 className="text-xl font-semibold text-center mt-2">{trainer.name}</h3>
       {/* Years of Experience */}
       <p className="text-sm text-gray-600 text-center">
-        {trainer.experience} years of experience
+        {trainer.yearsOfExperience} years of experience
       </p>
       {/* Social Icons */}
       <div className="flex justify-center mt-3 space-x-3">
@@ -34,14 +34,20 @@ const TrainerCard = ({ trainer }) => {
       </div>
       {/* Available Slots */}
       <p className="text-center mt-3">
-        <span className="font-semibold">Available Slots:</span>{' '}
-        {trainer.availableSlots}
+        <span className="font-semibold">Available Slots:</span>
+        <div className="mt-2">
+          {trainer.availableSlots.map((slot, index) => (
+            <div key={index} className="text-sm ml-44  sm:ml-28 lg:ml-52 text-left text-gray-700">
+              {slot}
+            </div>
+          ))}
+        </div>
       </p>
       {/* Know More Button */}
-      <Link to={`/trainer/${trainer._id}`}>
+      <Link  to={`/trainerdetails/${trainer._id}`}>
         <button
        
-        className="w-full mt-4 bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 duration-200"
+        className="w-8/12 mx-auto flex flex-col items-center mt-4 bg-lime-600 text-white py-2 rounded-lg hover:bg-lime-500 duration-300"
       >
         Know More
       </button></Link>

@@ -2,7 +2,7 @@
   {
  
   "name": "Sophia Lee",
-  "profileImage": "https://example.com/sophia.jpg",
+  "profileImage": "https://i.ibb.co.com/26YGkvq/yogatainer1.png",
   "details": "Sophia is a certified fitness trainer with over 5 years of experience. She specializes in yoga, mindfulness, and helping clients achieve their personal fitness goals.",
   "expertise": ["Yoga", "Mindfulness", "Personal Training"],
   "availableSlots": [
@@ -26,8 +26,8 @@
 ,
 {
   
-  "name": "Michael Carter",
-  "profileImage": "https://example.com/michael.jpg",
+  "name": "Michael Brown",
+  "profileImage": "https://i.ibb.co.com/0ZcfDRs/tainner-2.png",
   "details": "Michael is a professional strength and conditioning coach with 8+ years of experience. He specializes in weight training and muscle building.",
   "expertise": ["Strength Training", "Weightlifting", "Muscle Building"],
   "availableSlots": [
@@ -47,10 +47,10 @@
 },
 {
   
-  "name": "Ava Johnson",
-  "profileImage": "https://example.com/ava.jpg",
+  "name": "Emma Davis",
+  "profileImage": "https://i.ibb.co.com/t2Bs6DV/4-tainer-3.png",
   "details": "Ava is a Pilates expert with a passion for helping people improve their posture and flexibility. She has been teaching Pilates for over 6 years.",
-  "expertise": ["Pilates", "Flexibility Training", "Posture Correction"],
+  "expertise": ["Pilates", "Flexibility Training"],
   "availableSlots": [
     "Tuesday 10:00 AM - 11:00 AM",
     "Thursday 2:00 PM - 3:00 PM",
@@ -69,8 +69,8 @@
 ,
 {
   
-  "name": "Daniel Smith",
-  "profileImage": "https://example.com/daniel.jpg",
+  "name": "Isabella Wilson",
+  "profileImage": "https://i.ibb.co.com/VTz6W9Y/athlete-5.jpg",
   "details": "Daniel is a certified CrossFit coach who focuses on high-intensity functional training. He has been training individuals and groups for over a decade.",
   "expertise": ["CrossFit", "HIIT", "Endurance Training"],
   "availableSlots": [
@@ -90,8 +90,8 @@
 }
 ,{
   
-  "name": "Emma Williams",
-  "profileImage": "https://example.com/emma.jpg",
+  "name": "Oliver Martinez",
+  "profileImage": "https://i.ibb.co.com/t2Bs6DV/4-tainer-3.png",
   "details": "Emma is a certified Zumba instructor who brings energy and fun to every workout. Her goal is to make fitness enjoyable for everyone.",
   "expertise": ["Zumba", "Dance Fitness", "Cardio"],
   "availableSlots": [
@@ -111,8 +111,8 @@
 },
 {
   
-  "name": "Oliver Brown",
-  "profileImage": "https://example.com/oliver.jpg",
+  "name": "low Brown",
+  "profileImage": "https://i.ibb.co.com/wyfTXQZ/pexels-olly-3775566.jpg",
   "details": "Oliver is a professional personal trainer with expertise in functional fitness and weight loss. He has a decade of experience helping clients achieve sustainable health goals.",
   "expertise": ["Functional Fitness", "Weight Loss", "Personal Training"],
   "availableSlots": [
