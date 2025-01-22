@@ -1,12 +1,17 @@
-import { Select } from "flowbite-react";
 import { useState } from "react";
-
+import Select from "react-select";
+import { imageUpload } from "../../../api/utils";
+import { toast } from "react-toastify";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useAuth from "../../../hooks/useAuth";
 
 const BecomeATrainer = () => {
+const axiosSecure = useAxiosSecure();
+const {user} = useAuth() // Replace with actual user context
 
   const [formData, setFormData] = useState({
     fullName: "",
-    email: "user@example.com", // Example, should be dynamically set from user data
+    email: user.email,
     age: "",
     profileImage: null,
     skills: [],
@@ -15,147 +20,182 @@ const BecomeATrainer = () => {
     otherInfo: "",
   });
 
-  // Options for React Select
-  const dayOptions = [
-    { value: "Sun", label: "Sunday" },
-    { value: "Mon", label: "Monday" },
-    { value: "Tue", label: "Tuesday" },
-    { value: "Wed", label: "Wednesday" },
-    { value: "Thu", label: "Thursday" },
-    { value: "Fri", label: "Friday" },
-    { value: "Sat", label: "Saturday" },
+  // console.log(formData);
+  
+  const [status, setStatus] = useState("pending");
+
+  const skillsOptions = [
+    { label: "Yoga", value: "Yoga" },
+    { label: "Cardio", value: "Cardio" },
+    { label: "Strength Training", value: "Strength Training" },
+    { label: "Zumba", value: "Zumba" },
   ];
 
-  // Skills options (checkboxes)
-  const skillOptions = ["Yoga", "Personal Training", "Mindfulness", "Cardio"];
+  const daysOptions = [
+    { label: "Sunday", value: "Sunday" },
+    { label: "Monday", value: "Monday" },
+    { label: "Tuesday", value: "Tuesday" },
+    { label: "Wednesday", value: "Wednesday" },
+    { label: "Thursday", value: "Thursday" },
+    { label: "Friday", value: "Friday" },
+    { label: "Saturday", value: "Saturday" },
+  ];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData({ ...formData, [name]: value });
   };
 
-  const handleDayChange = (selectedOptions) => {
-    const days = selectedOptions.map((option) => option.value);
-    setFormData((prev) => ({ ...prev, availableDays: days }));
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setFormData({ ...formData, profileImage: file });
   };
 
-  const handleImageChange = (e) => {
-    setFormData((prev) => ({ ...prev, profileImage: e.target.files[0] }));
+  const handleSelectChange = (selectedOptions, field) => {
+    setFormData({ ...formData, [field]: selectedOptions.map((option) => option.value) });
   };
 
-  const handleCheckboxChange = (skill) => {
-    setFormData((prev) => {
-      const updatedSkills = prev.skills.includes(skill)
-        ? prev.skills.filter((s) => s !== skill)
-        : [...prev.skills, skill];
-      return { ...prev, skills: updatedSkills };
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const payload = {
+
+    if (!formData.fullName || !formData.age || !formData.availableTime) {
+      toast.error("Please fill out all required fields.");
+      return;
+    }
+
+    let photoURL = "";
+    if (formData.profileImage) {
+      photoURL = await imageUpload(formData.profileImage);
+    }
+
+    const submissionData = {
       ...formData,
-      status: "Pending",
+      profileImage: photoURL,
+      status,
     };
-    console.log("Submitted Data:", payload);
-    // Add API call here to save `payload` to the database
+
+    try {
+      const response = await axiosSecure.post("/becomeatrainer", submissionData);
+      console.log(response.data);
+      if (response.data) {
+        toast.success("Trainer application submitted successfully!");
+        setFormData({
+          fullName: "",
+          email: user.email,
+          age: "",
+          profileImage: null,
+          skills: [],
+          availableDays: [],
+          availableTime: "",
+          otherInfo: "",
+        });
+        document.getElementById("image").value = ""; // Reset file input
+        setStatus("pending");
+      } else {
+        toast.error("Failed to submit the application.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("An error occurred. Please try again.");
+    }
   };
+ 
+
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white shadow rounded">
-      <h2 className="text-2xl font-bold mb-4 text-center">Become a Trainer</h2>
+    <div className="max-w-2xl mx-auto p-4 bg-gray-100 rounded shadow-md">
+      <h2 className="text-2xl font-semibold mb-4 text-center">Be a Trainer</h2>
       <form onSubmit={handleSubmit}>
         {/* Full Name */}
-        <label className="block mb-2 font-medium">Full Name</label>
+        <label className="block mb-2">Full Name</label>
         <input
           type="text"
           name="fullName"
           value={formData.fullName}
           onChange={handleInputChange}
-          className="w-full p-2 border rounded mb-4"
+          className="w-full mb-4 p-2 border rounded"
+          placeholder="Enter your full name"
           required
         />
 
-        {/* Email */}
-        <label className="block mb-2 font-medium">Email</label>
+        {/* Email (Read-only) */}
+        <label className="block mb-2">Email</label>
         <input
           type="email"
           name="email"
           value={formData.email}
           readOnly
-          className="w-full p-2 border rounded bg-gray-100 mb-4"
+          className="w-full mb-4 p-2 border rounded bg-gray-200"
         />
 
         {/* Age */}
-        <label className="block mb-2 font-medium">Age</label>
+        <label className="block mb-2">Age</label>
         <input
           type="number"
           name="age"
           value={formData.age}
           onChange={handleInputChange}
-          className="w-full p-2 border rounded mb-4"
+          className="w-full mb-4 p-2 border rounded"
+          placeholder="Enter your age"
           required
         />
 
         {/* Profile Image */}
-        <label className="block mb-2 font-medium">Profile Image</label>
+        <label className="block mb-2">Profile Image</label>
         <input
-          type="file"
-          name="profileImage"
-          accept="image/*"
-          onChange={handleImageChange}
-          className="w-full p-2 border rounded mb-4"
           required
+          type="file"
+          id="image"
+          name="image"
+          accept="image/*"
+          onChange={handleFileChange}
         />
 
         {/* Skills */}
-        <label className="block mb-2 font-medium">Skills</label>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {skillOptions.map((skill) => (
-            <label key={skill} className="flex items-center">
-              <input
-                type="checkbox"
-                checked={formData.skills.includes(skill)}
-                onChange={() => handleCheckboxChange(skill)}
-                className="mr-2"
-              />
-              {skill}
-            </label>
-          ))}
-        </div>
+        <label className="block mb-2">Skills</label>
+        <Select
+          isMulti
+          options={skillsOptions}
+          value={skillsOptions.filter((option) =>
+            formData.skills.includes(option.value)
+          )}
+          onChange={(selected) => handleSelectChange(selected, "skills")}
+          className="mb-4"
+        />
 
         {/* Available Days */}
-        <label className="block mb-2 font-medium">Available Days</label>
+        <label className="block mb-2">Available Days</label>
         <Select
-          options={dayOptions}
           isMulti
-          onChange={handleDayChange}
+          options={daysOptions}
+          value={daysOptions.filter((option) =>
+            formData.availableDays.includes(option.value)
+          )}
+          onChange={(selected) => handleSelectChange(selected, "availableDays")}
           className="mb-4"
         />
 
         {/* Available Time */}
-        <label className="block mb-2 font-medium">Available Time</label>
+        <label className="block mb-2">Available Time</label>
         <input
-          type="text"
+          type="time"
           name="availableTime"
           value={formData.availableTime}
           onChange={handleInputChange}
-          placeholder="e.g., 10:00 AM - 12:00 PM"
-          className="w-full p-2 border rounded mb-4"
+          className="w-full mb-4 p-2 border rounded"
           required
         />
 
         {/* Other Info */}
-        <label className="block mb-2 font-medium">Other Info</label>
+        <label className="block mb-2">Other Info</label>
         <textarea
           name="otherInfo"
           value={formData.otherInfo}
           onChange={handleInputChange}
-          className="w-full p-2 border rounded mb-4"
-          rows="3"
+          className="w-full mb-4 p-2 border rounded"
+          placeholder="Enter any additional information"
         ></textarea>
 
-        {/* Submit Button */}
+        {/* Apply Button */}
         <button
           type="submit"
           className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"

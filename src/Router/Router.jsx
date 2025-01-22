@@ -20,6 +20,7 @@ import ManageSlots from "../Pages/Dashboard/Trainer/ManageSlots";
 import TrainerBooked from "../Component/TrainerBooked/TrainerBooked";
 import BecomeATrainer from "../Pages/Dashboard/BecomeATrainer/BecomeATrainer";
 import Payment from "../Component/Payment/Payment";
+import Balance from "../Pages/Dashboard/Admin/Balance";
 
 
 export const router = createBrowserRouter([
@@ -88,6 +89,10 @@ export const router = createBrowserRouter([
       {
         path: 'addNewClass',
         element:<AddNewClass></AddNewClass>
+      },
+      {
+        path: 'balance',
+        element: <Balance></Balance>
       },
       // trainer route
       {

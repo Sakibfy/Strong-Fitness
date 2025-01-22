@@ -13,6 +13,8 @@ import { ToastContainer } from 'react-toastify'
 
 const queryClient = new QueryClient()
 
+// BecomeATrainer
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
