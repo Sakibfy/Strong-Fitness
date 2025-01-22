@@ -37,7 +37,7 @@ const TrainerCard = ({ trainer }) => {
         <span className="font-semibold">Available Slots:</span>
         <div className="mt-2">
           {trainer.availableSlots.map((slot, index) => (
-            <div key={index} className="text-sm ml-44  sm:ml-28 lg:ml-52 text-left text-gray-700">
+            <div key={index} className="text-sm ml-28  sm:ml-48 lg:ml-36 text-left text-gray-700">
               {slot}
             </div>
           ))}

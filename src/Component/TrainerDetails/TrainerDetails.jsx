@@ -32,7 +32,7 @@ const handleSlotClick = (slot) => {
             alt={trainer.name}
             className="w-48 h-48 mx-auto rounded-full object-contain"
           />
-          {/* <h1 className="text-3xl font-bold text-center mt-4">{trainer.name}</h1> */}
+          <h1 className="text-3xl font-bold text-center mt-4">{trainer.name}</h1>
           <p className="text-gray-700 text-center mt-2">{trainer.details}</p>
           <div className="mt-6">
             <h2 className="text-lg font-semibold">Expertise:</h2>

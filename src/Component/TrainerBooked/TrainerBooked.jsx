@@ -52,7 +52,7 @@ const TrainerBooked = () => {
   const memberShipName = selectedMembership.name || {};
   const price = selectedMembership.price || {};
   
- console.log(memberShipName, price);
+//  console.log(memberShipName, price);
 
 
  const handleSelectMembership = (membership) => {
@@ -75,7 +75,7 @@ const TrainerBooked = () => {
       photoURL: user.photoURL,
     };
 
-    console.log(data);
+    // console.log(data);
     //  booking data sending db
     await axiosSecure.post('/bookingtrainer', data)
     toast.success('trainer Booked Successfull!')
@@ -117,7 +117,7 @@ navigate("/payment", {
       {membershipOptions.map((membership) => (
         <div
           key={membership.id}
-          className="border bg-[#a78bfa] text-black rounded-lg px-10 py-16 shadow hover:shadow-lg transition"
+          className="border bg-[#a78bfa] hover:bg-slate-200 duration-500 text-black rounded-lg px-10 py-16 shadow hover:shadow-lg transition"
         >
           <h3 className="md:text-4xl font-semibold">{membership.name}</h3>
           <ul className="mt-2 ">
@@ -130,7 +130,7 @@ navigate("/payment", {
           <p className="mt-4 font-bold md:text-3xl">Price:$ {membership.price}</p>
          <button
             onClick={() => handleSelectMembership(membership)}
-            className='bg-slate-300 p-2 rounded-md mt-2'
+            className='bg-slate-300 px-4 py-2 rounded-md mt-2'
           >
             {selectedMembership?._id === membership._id ? "Select" : "Selected"}
           </button>
