@@ -19,6 +19,7 @@ import ActiveiteLogPage from "../Pages/Dashboard/Member/ActiveiteLogPage";
 import ManageSlots from "../Pages/Dashboard/Trainer/ManageSlots";
 import TrainerBooked from "../Component/TrainerBooked/TrainerBooked";
 import BecomeATrainer from "../Pages/Dashboard/BecomeATrainer/BecomeATrainer";
+import Payment from "../Component/Payment/Payment";
 
 
 export const router = createBrowserRouter([
@@ -46,11 +47,21 @@ export const router = createBrowserRouter([
       },
       {
         path: "/trainer/:id/book",
-        element: <TrainerBooked></TrainerBooked>
+        element: <PrivateRoute>
+          <TrainerBooked></TrainerBooked>
+        </PrivateRoute>
       },
       {
         path: "/become-a-trainer",
-        element: <BecomeATrainer></BecomeATrainer>
+        element: <PrivateRoute>
+          <BecomeATrainer></BecomeATrainer>
+        </PrivateRoute>
+      },
+      {
+        path: '/payment',
+        element: <PrivateRoute>
+          <Payment></Payment>
+        </PrivateRoute>
       },
       
     

@@ -16,7 +16,7 @@ const handleSlotClick = (slot) => {
         selectedSlot: slot,
         classes: trainer.expertise,
       },  });
-    console.log(slot, trainer);
+    
   };
 // Redirect to Become a Trainer page
   const handleBecomeTrainerClick = () => {

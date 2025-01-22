@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
@@ -6,11 +6,12 @@ import { toast } from "react-toastify";
 
 
 const TrainerBooked = () => {
-  const [selectedMembership, setSelectedMembership] = useState(null);
+  const [selectedMembership, setSelectedMembership] = useState([]);
   const location = useLocation();
   const { trainerName, selectedSlot, classes } = location.state || {};
-const {user} = useAuth()
-const axiosSecure = useAxiosSecure()
+  const {user} = useAuth()
+  const axiosSecure = useAxiosSecure()
+  const navigate = useNavigate();
   
   const membershipOptions  = [
     {
@@ -20,18 +21,19 @@ const axiosSecure = useAxiosSecure()
         'Use of cardio and strength training equipment.',
         'Access to locker rooms and showers.'
       ],
-      price: "$50",
+      price: "50",
     },
-    {
+    { 
       name: "Standard Membership",
       benefits: [
         "All benefits of Basic Membership.",
         "Access to cardio and strength training equipment.",
         "Access to group fitness classes (e.g., Yoga, Spinning, Zumba).",
       ],
-      price: "$100",
+      price: "100",
     },
     {
+       
       name: "Premium Membership",
       benefits: [
         "All benefits of Standard Membership.",
@@ -39,28 +41,62 @@ const axiosSecure = useAxiosSecure()
         "Access to locker rooms and showers.",
         "Discounts on additional services such as massage therapy or nutrition counseling.",
       ],
-      price: "$150",
+      price: "150",
     },
   ];
-  const handleSelectMembership = async (membership) => {
+  
+ 
+//  console.log(selectedMembership.name);
+// console.log(selectedMembership.name);
+
+  const memberShipName = selectedMembership.name || {};
+  const price = selectedMembership.price || {};
+  
+ console.log(memberShipName, price);
+
+
+ const handleSelectMembership = (membership) => {
+    setSelectedMembership(membership);
+    toast.success(`Selected: ${membership.name}`);
+  };
+
+  const handleBookTrainer = async (membership) => {
+    console.log(setSelectedMembership(membership));
     setSelectedMembership(membership);
     // Prepare the data to send to the backend
     const data = {
       trainerName,
       selectedSlot: selectedSlot,
       classes,
-      membershipType: membership.name,
-      price: membership.price,
+      memberShipName,
+      price: parseInt(price),
       email: user.email,
       name: user.displayName,
       photoURL: user.photoURL,
     };
- console.log(data);
+
+    console.log(data);
+    //  booking data sending db
     await axiosSecure.post('/bookingtrainer', data)
     toast.success('trainer Booked Successfull!')
-  }
+
+navigate("/payment", {
+      state: {
+      trainerName,
+      memberShipName,
+      selectedSlot,
+      price,
+      email: user.email,
+      name: user.displayName,
+      photoURL: user.photoURL,
+      },
+});
+}
 
 
+
+
+  
 
   return (
      <div className="container mx-auto px-6 py-10">
@@ -77,7 +113,7 @@ const axiosSecure = useAxiosSecure()
     </div>
 
       {/* Packages Section */}
-      <div className="grid  md:grid-cols-3 grid-cols-1 gap-6">
+      <div className="grid  md:grid-cols-3  sm:grid-cols-1 grid-cols-1 gap-6">
       {membershipOptions.map((membership) => (
         <div
           key={membership.id}
@@ -91,22 +127,29 @@ const axiosSecure = useAxiosSecure()
               </li>
             ))}
           </ul>
-          <p className="mt-4 font-bold md:text-3xl">Price: {membership.price}</p>
-        
-            <button
+          <p className="mt-4 font-bold md:text-3xl">Price:$ {membership.price}</p>
+         <button
             onClick={() => handleSelectMembership(membership)}
-            className="mt-4  w-full disabled: bg-gray-800 text-white py-2 rounded hover:bg-gray-700"
+            className='bg-slate-300 p-2 rounded-md mt-2'
           >
-            Select
+            {selectedMembership?._id === membership._id ? "Select" : "Selected"}
           </button>
+            
          
         </div>
       ))}
+       
      
     </div>
 
-      
-    
+     <div className=" flex justify-center items-center text-center w-2/12 mx-auto">
+          <button
+        onClick={handleBookTrainer}
+        className="w-full mt-6 bg-lime-600 text-white py-2 rounded hover:bg-lime-800 duration-300"
+      >
+        Book Trainer
+      </button>
+        </div>
     </div>
   );
 };

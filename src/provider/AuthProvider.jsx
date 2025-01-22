@@ -44,10 +44,6 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
   const unsubscribe =  onAuthStateChanged(auth, currentUser => {
     setUser(currentUser);
-    
-
-// console.table( currentUser?.displayName,currentUser?.photoURL,currentUser?.email); 
-
 
     //get jwt token
     if (currentUser) {
