@@ -5,7 +5,6 @@ import TrainerCard from "./TrainerCard";
 const AllTrainer = () => {
   const [trainers] = useAllTrainer();
 
-// console.log(trainers);
 
   return (
     <div className=" p-12 bg-black">

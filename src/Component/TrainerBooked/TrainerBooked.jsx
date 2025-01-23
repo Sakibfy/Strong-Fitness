@@ -61,7 +61,7 @@ const TrainerBooked = () => {
   };
 
   const handleBookTrainer = async (membership) => {
-    console.log(setSelectedMembership(membership));
+   
     setSelectedMembership(membership);
     // Prepare the data to send to the backend
     const data = {
@@ -101,7 +101,7 @@ navigate("/payment", {
   return (
      <div className="container mx-auto px-6 py-10">
      <div className="space-y-3 items-center flex flex-col mb-2">
-      <h1 className="text-center font-bold text-5xl">Booking Details</h1>
+      <h1 className="text-center font-bold text-4xl">Booking Details</h1>
       <p className="text-3xl">Trainer: {trainerName}</p>
       <button className="text-2xl underline p-1 rounded-md">Slot: {selectedSlot}</button>
       <p></p>
@@ -117,12 +117,12 @@ navigate("/payment", {
       {membershipOptions.map((membership) => (
         <div
           key={membership.id}
-          className="border bg-[#a78bfa] hover:bg-slate-200 duration-500 text-black rounded-lg px-10 py-16 shadow hover:shadow-lg transition"
+          className="border bg-[#a78bfa] hover:bg-slate-200 duration-500 text-black rounded-lg px-3 py-5 shadow hover:shadow-lg transition"
         >
-          <h3 className="md:text-4xl font-semibold">{membership.name}</h3>
+          <h3 className="md:text-3xl font-semibold">{membership.name}</h3>
           <ul className="mt-2 ">
             {membership.benefits.map((benefit, index) => (
-              <li key={index} className="list-disc ml-6 md:text-xl">
+              <li key={index} className="list-disc ml-6 ">
                 {benefit}
               </li>
             ))}

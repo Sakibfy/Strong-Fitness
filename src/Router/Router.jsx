@@ -21,6 +21,14 @@ import TrainerBooked from "../Component/TrainerBooked/TrainerBooked";
 import BecomeATrainer from "../Pages/Dashboard/BecomeATrainer/BecomeATrainer";
 import Payment from "../Component/Payment/Payment";
 import Balance from "../Pages/Dashboard/Admin/Balance";
+import AllNewsletterSubscribers from "../Pages/Dashboard/Admin/AllNewsletterSubscribers";
+import AdminAllTrainers from "../Pages/Dashboard/Admin/AdminAllTrainers";
+import AppliedTrainer from "../Pages/Dashboard/Admin/AppliedTrainer";
+import AddNewForum from "../Pages/Dashboard/Trainer/AddNewForum";
+import ProfilePage from "../Pages/Dashboard/Member/ProfilePage";
+import BookedTrainer from "../Pages/Dashboard/Member/BookedTrainer";
+import AddNewSlot from "../Pages/Dashboard/Trainer/AddNewSlot";
+import AppliedTrainerDetails from "../Pages/Dashboard/Admin/AppliedTrainerDetails";
 
 
 export const router = createBrowserRouter([
@@ -31,7 +39,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path: 'AllClasses',
@@ -50,19 +58,19 @@ export const router = createBrowserRouter([
         path: "/trainer/:id/book",
         element: <PrivateRoute>
           <TrainerBooked></TrainerBooked>
-        </PrivateRoute>
+        </PrivateRoute>,
       },
       {
         path: "/become-a-trainer",
         element: <PrivateRoute>
           <BecomeATrainer></BecomeATrainer>
-        </PrivateRoute>
+        </PrivateRoute>,
       },
       {
         path: '/payment',
         element: <PrivateRoute>
           <Payment></Payment>
-        </PrivateRoute>
+        </PrivateRoute>,
       },
       
     
@@ -72,11 +80,11 @@ export const router = createBrowserRouter([
   },
    {
      path: '/login',
-     element: <Login></Login>
+     element: <Login></Login>,
    },
    {
      path: '/registaion',
-     element: <Registration></Registration>
+     element: <Registration></Registration>,
   },
      // dashboard
   {
@@ -85,25 +93,58 @@ export const router = createBrowserRouter([
       <Dashboard></Dashboard>
     </PrivateRoute>,
     children: [
-    // admin route
+      // admin route
+      {
+        path: "allnewslettersubscribers",
+        element: <AllNewsletterSubscribers></AllNewsletterSubscribers>,
+      },
+      {
+        path: 'adminalltrainer',
+        element: <AdminAllTrainers></AdminAllTrainers>,
+      },
+      {
+        path: 'appliedtrainer',
+        element: <AppliedTrainer></AppliedTrainer>,
+      },
+       {
+        path: 'appliedtrainertetails/:id',
+        element: <AppliedTrainerDetails></AppliedTrainerDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/becomeatrainer/${params.id}`)
+      },
       {
         path: 'addNewClass',
-        element:<AddNewClass></AddNewClass>
+        element:<AddNewClass></AddNewClass>,
       },
       {
         path: 'balance',
-        element: <Balance></Balance>
+        element: <Balance></Balance>,
       },
       // trainer route
       {
         path: 'manageslots',
-        element: <ManageSlots></ManageSlots>
+        element: <ManageSlots></ManageSlots>,
+      },
+      {
+        path: 'AddNewslot',
+        element: <AddNewSlot></AddNewSlot>
+      },
+      {
+        path: 'AddnewForum',
+        element: <AddNewForum></AddNewForum>,
       },
       
       // member route
       {
         path: 'activitylogpage',
-        element: <ActiveiteLogPage></ActiveiteLogPage>
+        element: <ActiveiteLogPage></ActiveiteLogPage>,
+      },
+      {
+        path: 'ProfilePage',
+        element: <ProfilePage></ProfilePage>,
+      },
+      {
+        path: 'BookedTrainer',
+        element: <BookedTrainer></BookedTrainer>,
       },
     ]
   }  

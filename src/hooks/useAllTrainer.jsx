@@ -12,7 +12,7 @@ const useAllTrainer = () => {
       return res.data;
     }
   })
-  
+  console.log();
   return [trainers]
 };
 

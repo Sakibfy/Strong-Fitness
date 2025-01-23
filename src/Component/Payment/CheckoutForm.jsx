@@ -1,11 +1,7 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 
-// import useCart from "../../../../hooks/useCart";
-
-
-import Swal from "sweetalert2";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
@@ -13,15 +9,14 @@ import { toast } from "react-toastify";
 
 const CheckoutForm = ({price}) => {
   const stripe = useStripe();
+  const navigate = useNavigate();
   const [clintSecret, setClintSecret] = useState('');
   const [transactionId, settransactionId] = useState('');
   const [error, setError] = useState('')
   const elements = useElements();
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth()
-  // const navigate = useNavigate()
-//   const [cart, refetch] = useCart();
-// const totelPrice = cart.reduce((total, item) => total + item.price ,0)
+ 
 
 
   useEffect(() => {
@@ -81,7 +76,7 @@ const CheckoutForm = ({price}) => {
         // now save the payment in the database
         const paymentInfo = {
           email: user.email,
-          price,
+          price: parseInt(price),
           transactionId: paymentIntent.id,
           data: new Date(),
           
@@ -90,6 +85,7 @@ const CheckoutForm = ({price}) => {
         const res = await axiosSecure.post('/payments', paymentInfo)
         console.log('payment saved', res.data);
         toast.success('Thank you for the payment')
+        navigate('/')
         
       }
     }

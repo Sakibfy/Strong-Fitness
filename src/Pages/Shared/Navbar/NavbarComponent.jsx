@@ -67,7 +67,7 @@ export function NavbarComponent() {
         
         <Navbar.Toggle />
       </div>
-      <Navbar.Collapse>
+      <Navbar.Collapse className="">
         {link}
         
       </Navbar.Collapse>
