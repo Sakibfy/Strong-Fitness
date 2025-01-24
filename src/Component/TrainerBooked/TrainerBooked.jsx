@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 const TrainerBooked = () => {
   const [selectedMembership, setSelectedMembership] = useState([]);
   const location = useLocation();
-  const { trainerName, selectedSlot, classes } = location.state || {};
+  const { trainerName, selectedSlot, classes,trainerId } = location.state || {};
   const {user} = useAuth()
   const axiosSecure = useAxiosSecure()
   const navigate = useNavigate();
@@ -73,9 +73,10 @@ const TrainerBooked = () => {
       email: user.email,
       name: user.displayName,
       photoURL: user.photoURL,
+      trainerId,
     };
 
-    // console.log(data);
+    console.log(data.trainerId);
     //  booking data sending db
     await axiosSecure.post('/bookingtrainer', data)
     toast.success('trainer Booked Successfull!')
@@ -89,6 +90,7 @@ navigate("/payment", {
       email: user.email,
       name: user.displayName,
       photoURL: user.photoURL,
+      trainerId,
       },
 });
 }

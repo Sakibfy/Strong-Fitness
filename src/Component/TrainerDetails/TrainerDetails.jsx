@@ -15,6 +15,7 @@ const handleSlotClick = (slot) => {
         trainerName: trainer.name,
         selectedSlot: slot,
         classes: trainer.expertise,
+        trainerId: id,
       },  });
     
   };

@@ -16,9 +16,7 @@ const Registration = () => {
     const navigate = useNavigate()
     
     const onSubmit = data => {
-        console.log(data.
-photoURL
-);
+  ;
         createUser(data.email, data.password)
             .then(resul => {
                 const loggedUser = resul.user;
@@ -36,7 +34,8 @@ photoURL
                          .then(res => {
                              if (res.data.insertedId) {
                             console.log('user added to the database');     
-                           reset()
+                          reset()
+                          navigate('/');
                            Swal.fire({
                            position: "top-end",
                            icon: "success",
@@ -44,7 +43,7 @@ photoURL
                            showConfirmButton: false,
                            timer: 1500
                            });
-                            navigate('/');
+                           
                            }
                            })
                        

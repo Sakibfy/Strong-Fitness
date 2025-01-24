@@ -1,7 +1,8 @@
 import { FaUserCircle } from "react-icons/fa";
-import { NavLink, Outlet } from "react-router-dom";
+import { Navigate, NavLink, Outlet } from "react-router-dom";
 
-// import useRole from "../hooks/useRole";
+import useRole from "../hooks/useRole";
+import Loding from "../Component/Loading/Loding";
 
 
 
@@ -9,11 +10,12 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
 
-  // const [role] = useRole()
-  // console.log(role);
-  const role = 'admin'
  
-
+const [role, isLoading] = useRole()
+  if (isLoading) return <Loding />
+  // if (role === 'member') return <Navigate to='/dashboard/ProfilePage' />
+  // if (role === 'admin') return <Navigate to='/dashboard/allnewslettersubscribers' />
+  // if (role === 'trainer') return <Navigate to='/dashboard/manageslots' />
 
   return (
      <div className="flex ">
@@ -44,11 +46,11 @@ const Dashboard = () => {
 {role === 'member' && (<>
   <li><NavLink to='/dashboard/ProfilePage'><FaUserCircle className="block" /> Profile Page</NavLink> </li>
   <li><NavLink to='/dashboard/ActivityLogpage'>Activity Log page</NavLink> </li>
-  <li><NavLink to='/dashboard/BookedTrainer'>Booked Trainer</NavLink> </li>
+  <li><NavLink to='/dashboard/bookedTrainerPage'>Booked Trainer</NavLink> </li>
  
 </>)}
 
-         
+         <hr />
 <li><NavLink to='/'>Home</NavLink> </li>             
   </ul>
       </div>

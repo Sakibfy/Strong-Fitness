@@ -29,6 +29,7 @@ import ProfilePage from "../Pages/Dashboard/Member/ProfilePage";
 import BookedTrainer from "../Pages/Dashboard/Member/BookedTrainer";
 import AddNewSlot from "../Pages/Dashboard/Trainer/AddNewSlot";
 import AppliedTrainerDetails from "../Pages/Dashboard/Admin/AppliedTrainerDetails";
+import BookedTrainerPage from "../Pages/Dashboard/Member/BookedTrainerPage";
 
 
 export const router = createBrowserRouter([
@@ -143,8 +144,8 @@ export const router = createBrowserRouter([
         element: <ProfilePage></ProfilePage>,
       },
       {
-        path: 'BookedTrainer',
-        element: <BookedTrainer></BookedTrainer>,
+        path: 'bookedTrainerPage',
+        element: <BookedTrainerPage></BookedTrainerPage>
       },
     ]
   }  
