@@ -30,6 +30,8 @@ import BookedTrainer from "../Pages/Dashboard/Member/BookedTrainer";
 import AddNewSlot from "../Pages/Dashboard/Trainer/AddNewSlot";
 import AppliedTrainerDetails from "../Pages/Dashboard/Admin/AppliedTrainerDetails";
 import BookedTrainerPage from "../Pages/Dashboard/Member/BookedTrainerPage";
+import AdminRoute from "./AdminRoute";
+import TrainerRoute from "./TrainerRoute";
 
 
 export const router = createBrowserRouter([
@@ -97,41 +99,42 @@ export const router = createBrowserRouter([
       // admin route
       {
         path: "allnewslettersubscribers",
-        element: <AllNewsletterSubscribers></AllNewsletterSubscribers>,
+        element: <AdminRoute><AllNewsletterSubscribers></AllNewsletterSubscribers>,</AdminRoute>
       },
       {
         path: 'adminalltrainer',
-        element: <AdminAllTrainers></AdminAllTrainers>,
+        element: <AdminRoute><AdminAllTrainers></AdminAllTrainers>,</AdminRoute>
       },
       {
         path: 'appliedtrainer',
-        element: <AppliedTrainer></AppliedTrainer>,
+        element: <AdminRoute><AppliedTrainer></AppliedTrainer>,</AdminRoute>,
       },
        {
         path: 'appliedtrainertetails/:id',
-        element: <AppliedTrainerDetails></AppliedTrainerDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/becomeatrainer/${params.id}`)
+         element: <AdminRoute><AppliedTrainerDetails></AppliedTrainerDetails>,
+         </AdminRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/alltrainer/${params.id}`)
       },
       {
         path: 'addNewClass',
-        element:<AddNewClass></AddNewClass>,
+        element: <AdminRoute><AddNewClass></AddNewClass>,</AdminRoute>
       },
       {
         path: 'balance',
-        element: <Balance></Balance>,
+        element: <AdminRoute><Balance></Balance>,</AdminRoute>
       },
       // trainer route
       {
         path: 'manageslots',
-        element: <ManageSlots></ManageSlots>,
+        element: <TrainerRoute><ManageSlots></ManageSlots>,</TrainerRoute>
       },
       {
         path: 'AddNewslot',
-        element: <AddNewSlot></AddNewSlot>
+        element: <TrainerRoute><AddNewSlot></AddNewSlot>,</TrainerRoute>
       },
       {
         path: 'AddnewForum',
-        element: <AddNewForum></AddNewForum>,
+        element: <TrainerRoute><AddNewForum></AddNewForum>,</TrainerRoute>
       },
       
       // member route

@@ -1,16 +1,17 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { toast } from "react-toastify";
 
 
 const TrainerBooked = () => {
   const [selectedMembership, setSelectedMembership] = useState([]);
   const location = useLocation();
-  const { trainerName, selectedSlot, classes,trainerId } = location.state || {};
+  const { trainerName, selectedSlot, skills,trainerId } = location.state || {};
   const {user} = useAuth()
-  const axiosSecure = useAxiosSecure()
+ 
+  console.log(skills
+);
   const navigate = useNavigate();
   
   const membershipOptions  = [
@@ -45,9 +46,7 @@ const TrainerBooked = () => {
     },
   ];
   
- 
-//  console.log(selectedMembership.name);
-// console.log(selectedMembership.name);
+
 
   const memberShipName = selectedMembership.name || {};
   const price = selectedMembership.price || {};
@@ -67,7 +66,7 @@ const TrainerBooked = () => {
     const data = {
       trainerName,
       selectedSlot: selectedSlot,
-      classes,
+      skills,
       memberShipName,
       price: parseInt(price),
       email: user.email,
@@ -76,13 +75,13 @@ const TrainerBooked = () => {
       trainerId,
     };
 
-    console.log(data.trainerId);
-    //  booking data sending db
-    await axiosSecure.post('/bookingtrainer', data)
-    toast.success('trainer Booked Successfull!')
+    console.log(data.skills);
+   
 
 navigate("/payment", {
-      state: {
+   state: {
+     skills
+,
       trainerName,
       memberShipName,
       selectedSlot,
@@ -108,7 +107,8 @@ navigate("/payment", {
       <button className="text-2xl underline p-1 rounded-md">Slot: {selectedSlot}</button>
       <p></p>
       <ul>
-        {classes?.map((item, index) => (
+        {skills
+?.map((item, index) => (
           <li className="list-disc mb-2 text-xl inline-block ml-4" key={index}>{item}</li>
         ))}
       </ul>

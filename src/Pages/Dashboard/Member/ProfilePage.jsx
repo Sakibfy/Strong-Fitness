@@ -1,12 +1,12 @@
 import useAuth from "../../../hooks/useAuth";
-// import useRole from "../../../hooks/useRole";
+import useRole from "../../../hooks/useRole";
 
 
 const ProfilePage = () => {
 	const { user } = useAuth();
-	// const [role] = useRole()
+	const [role] = useRole()
 
-	// console.log(role);
+	console.log(role);
 
 
 	console.log(user);
@@ -18,8 +18,8 @@ const ProfilePage = () => {
 } alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
 	<div className="space-y-4 text-center divide-y dark:divide-gray-300">
 		<div className="my-2 space-y-1">
-  {/* <h2 className="text-xl font-semibold sm:text-2xl">{ user.role}</h2> */}
-  <h2 className="text-xl font-semibold sm:text-2xl">{ user.displayName}</h2>
+  <h2 className="text-xl font-semibold  sm:text-2xl mb-2">{ user.displayName}</h2>
+  <span  className="text-[15px] rounded-lg p-1 text-white bg-lime-500  uppercase font-semibold ">{ role}</span>
   <p className="px-5 text-xs sm:text-base dark:text-gray-600">{ user.email}</p>
   <p className="px-5 text-xs sm:text-base dark:text-gray-600">{ user.metadata
 .lastSignInTime

@@ -12,7 +12,7 @@ const AppliedTrainer = () => {
   useEffect(() => {
     const fetchTrainers = async () => {
       try {
-        const response = await axiosSecure.get("/becomeatrainer");
+        const response = await axiosSecure.get(`/alltrainer/pending`);
         setTrainers(response.data);
       } catch (error) {
         console.error("Error fetching trainers:", error);

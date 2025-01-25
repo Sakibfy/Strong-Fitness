@@ -7,7 +7,7 @@ import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
 
 
-const CheckoutForm = ({price}) => {
+const CheckoutForm = ({price, trainerName,memberShipName, selectedSlot, name, photoURL, trainerId,skills}) => {
   const stripe = useStripe();
   const navigate = useNavigate();
   const [clintSecret, setClintSecret] = useState('');
@@ -22,7 +22,7 @@ const CheckoutForm = ({price}) => {
   useEffect(() => {
       axiosSecure.post('/create-payment-intent', {price})
       .then(res => {
-        console.log(res.data.clientSecret);
+        // console.log(res.data.clientSecret);
         setClintSecret(res.data.clientSecret);
       })   
   },  [axiosSecure])
@@ -79,12 +79,20 @@ const CheckoutForm = ({price}) => {
           price: parseInt(price),
           transactionId: paymentIntent.id,
           data: new Date(),
+         trainerName,
+         selectedSlot: selectedSlot,
+         skills,
+         memberShipName,
+      name: user.displayName,
+      photoURL: user.photoURL,
+      trainerId,
           
         }
         console.log(paymentInfo);
         const res = await axiosSecure.post('/payments', paymentInfo)
         console.log('payment saved', res.data);
         toast.success('Thank you for the payment')
+        // navigate('/dashboard/bookedTrainer')
         navigate('/')
         
       }

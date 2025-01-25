@@ -4,26 +4,24 @@ import { useState } from "react";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { toast } from "react-toastify";
 
-const BookedTrainer = ({ trainers }) => {
-  console.log(trainers);
-
-  const { memberShipName, price, selectedSlot, trainerName, email, classes, name, _id } = trainers
+const BookedTrainer = ({ trainer }) => {
   
   const axiosPublic = useAxiosPublic()
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [rating, setRating] = useState(0);
   const [review, setFeedback] = useState('');
 
+
   const handleReviewSubmit = async (e) => {
     e.preventDefault();
 
     const reviewData = {
-      trainerId: _id,
-      name: trainerName,
+      trainerId: trainer._id,
+      name: trainer.trainerName,
       rating,
       review,
-      memberName: name,
-      email: email,
+      memberName: trainer.name,
+      email: trainer.email,
     };
 
     try {
@@ -43,42 +41,37 @@ const BookedTrainer = ({ trainers }) => {
       <h1 className="text-2xl font-bold mb-4">Booked Trainer</h1>
 
       {/* Trainer Info */}
-     <div className="bg-white shadow-md rounded p-4 mb-6">
-        <h2 className="text-xl font-bold">{trainerName}</h2>
-        <p>Email: {email}</p>
-        <p>Selected Slot: {selectedSlot}</p>
-      </div> 
+      <div className="bg-white shadow-md rounded p-4 mb-6">
+        <h2 className="text-xl font-bold">{trainer.trainerName}</h2>
+        <p>Email: {trainer.email}</p>
+        <p>Selected Slot: {trainer.selectedSlot}</p>
+      </div>
 
       {/* Classes Info */}
-     <div className="bg-white shadow-md rounded p-4 mb-6">
+      <div className="bg-white shadow-md rounded p-4 mb-6">
         <h3 className="text-lg font-bold">Classes Offered:</h3>
         <ul className="list-disc ml-6">
-          {classes?.map((cls, index) => (
+          {trainer.skills?.map((cls, index) => (
             <li key={index}>{cls}</li>
           ))}
         </ul>
-      </div> 
+      </div>
 
       {/* Membership Info */}
       <div className="bg-white shadow-md rounded p-4 mb-6">
         <h3 className="text-lg font-bold">Membership Info:</h3>
-        <p>Name: {memberShipName}</p>
+        <p>Name: {trainer.memberShipName}</p>
 
-        <p>Price: ${price}</p>
-      </div> *
+        <p>Price: ${trainer.price}</p>
+      </div>
 
-      Review Button
+     
       <button
         className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
         onClick={() => setIsModalOpen(true)}
       >
-        Leave a Review
+        Give a Review
       </button>
-
-
-
-      
-      Review Modal
        {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-gray-700 text-white rounded shadow-md p-6 w-96">

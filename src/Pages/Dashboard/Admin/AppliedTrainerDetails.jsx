@@ -1,22 +1,22 @@
 import axios from "axios";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
 const AppliedTrainerDetails = () => {
   const trainer = useLoaderData();
+ 
 //  const navigate = useNavigate();
-
+const axiosSecure = useAxiosSecure()
   
-  // const handleConfirm = async () => {
-  //   try {
-  //     await axios.put(`/api/trainers/${trainerId}`, { status: 'confirmed' });
-  //     alert('Trainer application confirmed');
-  //     navigate('/appliedtrainers'); // Redirect to the list page
-  //   } catch (error) {
-  //     console.error(error);
-  //     alert('Failed to confirm application');
-  //   }
-  // };
+  console.log(trainer._id);
+
+  const handleConfirm = async () => {
+    const res = axiosSecure.patch(`alltrainer/${trainer._id}`)
+    console.log('confrom');
+     return res.data
+   
+  };
 
 
   return (
@@ -25,7 +25,8 @@ const AppliedTrainerDetails = () => {
      <div className="p-6 mx-16 mt-7 md:my-0 md:mx-0 bg-white rounded shadow-md">
       <div className="flex items-center mb-4">
         <img
-          src={trainer.profileImage}
+          src={trainer.profileImage
+}
           alt={trainer.fullName}
           className="w-24 h-24 rounded-full object-cover mr-4"
         />
@@ -45,14 +46,14 @@ const AppliedTrainerDetails = () => {
           </p>
           <p>
             <strong>Available Days:</strong>{" "}
-            {trainer.availableDays.join(", ")}
+            {trainer.availableSlots}
           </p>
         </div>
 
         <div>
           <p>
             <strong>Skills:</strong>{" "}
-            {trainer.skills.join(", ")}
+            {trainer.skills}
           </p>
           <p>
             <strong>Status:</strong> {trainer.status}
@@ -66,7 +67,7 @@ const AppliedTrainerDetails = () => {
       </div>
       <div className="mt-4 space-x-4">
         <button
-          // onClick={handleConfirm}
+          onClick={handleConfirm}
           className="bg-green-600 text-white px-4 py-2 rounded"
         >
           Confirm

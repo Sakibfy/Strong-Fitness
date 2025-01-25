@@ -16,7 +16,7 @@ const {user} = useAuth() // Replace with actual user context
     age: "",
     profileImage: null,
     skills: [],
-    availableDays: [],
+    availableSlots: [],
     availableTime: "",
     otherInfo: "",
   });
@@ -76,7 +76,7 @@ const {user} = useAuth() // Replace with actual user context
     };
 
     try {
-      const response = await axiosSecure.post("/becomeatrainer", submissionData);
+      const response = await axiosSecure.post("/alltrainer", submissionData);
       console.log(response.data);
       if (response.data) {
         toast.success("Trainer application submitted successfully!");
@@ -86,10 +86,12 @@ const {user} = useAuth() // Replace with actual user context
           email: user.email,
           age: "",
           profileImage: null,
-          skills: [],
-          availableDays: [],
+          skills: '',
+          availableSlots: '',
           availableTime: "",
           otherInfo: "",
+          statue: "pending",
+          yearsOfExperience: ''
         });
         document.getElementById("image").value = ""; // Reset file input
         setStatus("pending");
@@ -161,6 +163,16 @@ const {user} = useAuth() // Replace with actual user context
             formData.skills.includes(option.value)
           )}
           onChange={(selected) => handleSelectChange(selected, "skills")}
+          className="mb-4"
+        />
+        <label className="block mb-2">yearsOfExperience</label>
+        <Select
+          isMulti
+          options={skillsOptions}
+          value={skillsOptions.filter((option) =>
+            formData.skills.includes(option.value)
+          )}
+          onChange={(selected) => handleSelectChange(selected, "yearsOfExperience")}
           className="mb-4"
         />
 

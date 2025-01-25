@@ -12,20 +12,24 @@ const BookedTrainerPage = () => {
     queryKey: ['bookingData', user?.email],
 
     queryFn: async () => {
-      const { data } = await axiosSecure(`/bookingtrainer/${user?.email}`)
-      return data
+      const res = await axiosSecure(`/payments/${user?.email}`)
+      
+      return res.data
     }
-    ,
+    
   })
    
-  console.log(bookingData);
+
+console.log(bookingData);
+
+
   return (
     <div>
       {
         bookingData.map(trainer => (
           <BookedTrainer
             key={trainer?._id}
-            trainers={trainer}>
+            trainer={trainer}>
             
             </BookedTrainer>
         ))}

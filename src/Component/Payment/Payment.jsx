@@ -6,7 +6,7 @@ import CheckoutForm from "./CheckoutForm";
 
 const Payment = () => {
   const location = useLocation();
-  const {   trainerName, memberShipName, selectedSlot, price, email, name } = location.state || {};
+  const {   trainerName, memberShipName, selectedSlot, price, email, name,photoURL,trainerId,skills } = location.state || {};
  
 
   // payment
@@ -30,7 +30,17 @@ const Payment = () => {
 
       <div className="md:w-1/2 md:mt-0 mt-8  ">
         <Elements stripe={stripePromise}>
-          <CheckoutForm price={price}></CheckoutForm>
+            <CheckoutForm
+            price={price}
+            trainerName={trainerName}
+            memberShipName={memberShipName}
+            selectedSlot={selectedSlot}
+            name={name}
+            photoURL={photoURL}
+            trainerId={trainerId}
+            classes={skills}
+            
+            ></CheckoutForm>
      </Elements>
       </div>
     </div>

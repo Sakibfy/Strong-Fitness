@@ -13,14 +13,14 @@ const TrainerCard = ({ trainer }) => {
         className="w-36 h-44  hover:scale-110 duration-500 mx-auto rounded-3xl object-fill"
       />
       {/* Trainer Name */}
-      <h3 className="text-xl font-semibold text-center mt-2">{trainer.name}</h3>
+      <h3 className="text-xl font-semibold text-center mt-2">{trainer.fullName}</h3>
       {/* Years of Experience */}
       <p className="text-sm text-gray-600 text-center">
-        {trainer.yearsOfExperience} years of experience
+        {trainer?.yearsOfExperience}
       </p>
       {/* Social Icons */}
       <div className="flex justify-center mt-3 space-x-3">
-        {trainer.socialLinks.map((link) => (
+        {trainer?.socialLinks?.map((link) => (
           <a
             key={link.platform}
             href={link.url}
@@ -36,8 +36,8 @@ const TrainerCard = ({ trainer }) => {
       <p className="text-center mt-3">
         <span className="font-semibold">Available Slots:</span>
         <div className="mt-2">
-          {trainer.availableSlots.map((slot, index) => (
-            <div key={index} className="text-sm ml-28  sm:ml-48 lg:ml-36 text-left text-gray-700">
+          {trainer?.availableSlots?.map((slot, index) => (
+            <div key={index} className="text-sm ml-28  sm:ml-48 md::ml-36 text-left text-gray-700">
               {slot}
             </div>
           ))}

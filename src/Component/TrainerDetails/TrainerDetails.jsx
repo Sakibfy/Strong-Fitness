@@ -9,16 +9,18 @@ const TrainerDetails = () => {
   const navigate = useNavigate();
 
 
-
+console.log(trainer);
 const handleSlotClick = (slot) => {
     navigate(`/trainer/${id}/book`, {state: {
         trainerName: trainer.name,
         selectedSlot: slot,
-        classes: trainer.expertise,
+        skills: trainer.skills,
         trainerId: id,
       },  });
     
   };
+
+  console.log(trainer.skills);
 // Redirect to Become a Trainer page
   const handleBecomeTrainerClick = () => {
     navigate("/become-a-trainer");
@@ -30,15 +32,17 @@ const handleSlotClick = (slot) => {
         <div className="bg-white shadow-md rounded-lg p-6">
           <img
             src={trainer.profileImage}
-            alt={trainer.name}
+            alt={trainer.fullName}
             className="w-48 h-48 mx-auto rounded-full object-contain"
           />
           <h1 className="text-3xl font-bold text-center mt-4">{trainer.name}</h1>
-          <p className="text-gray-700 text-center mt-2">{trainer.details}</p>
+          <p className="text-gray-700 text-center mt-2">{trainer.
+             otherInfo}</p>
+          {/* <p className="text-gray-700 text-center mt-2">{trainer.skills}</p> */}
           <div className="mt-6">
             <h2 className="text-lg font-semibold">Expertise:</h2>
             <ul className="list-disc list-inside text-gray-700">
-              {trainer.expertise.map((item, index) => (
+              {trainer.skills.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
@@ -53,14 +57,14 @@ const handleSlotClick = (slot) => {
         <div className="bg-white shadow-md rounded-lg p-6 md:mt-32">
           <h2 className="text-2xl font-bold mb-4">Available Slots</h2>
           <div className="space-y-4">
-            {trainer.availableSlots.map((slot, index) => (
+             {trainer.availableSlots.map((slot, index) => (
               <button
                 key={index}
                 onClick={() => handleSlotClick(slot)}
                 className="mx-3 bg-lime-700 text-white py-2 px-4 rounded-lg hover:bg-lime-600 transition duration-200"
               >
                 {slot}
-              </button>
+              </button> 
             ))}
           </div>
         </div>

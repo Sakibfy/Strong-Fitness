@@ -8,8 +8,8 @@ import useRole from "../../../hooks/useRole";
 
 export function NavbarComponent() {
   const { user, logOut } = useAuth();
-   const [role] = useRole()
-  console.log(role);
+  //  const [role] = useRole()
+  // console.log(role);
   const handleLogOut = () => {
         logOut()
          .then(() => { })
