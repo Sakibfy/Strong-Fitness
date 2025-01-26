@@ -26,12 +26,13 @@ import AdminAllTrainers from "../Pages/Dashboard/Admin/AdminAllTrainers";
 import AppliedTrainer from "../Pages/Dashboard/Admin/AppliedTrainer";
 import AddNewForum from "../Pages/Dashboard/Trainer/AddNewForum";
 import ProfilePage from "../Pages/Dashboard/Member/ProfilePage";
-import BookedTrainer from "../Pages/Dashboard/Member/BookedTrainer";
 import AddNewSlot from "../Pages/Dashboard/Trainer/AddNewSlot";
 import AppliedTrainerDetails from "../Pages/Dashboard/Admin/AppliedTrainerDetails";
 import BookedTrainerPage from "../Pages/Dashboard/Member/BookedTrainerPage";
 import AdminRoute from "./AdminRoute";
 import TrainerRoute from "./TrainerRoute";
+import RoleTypeDashboard from "../Pages/Dashboard/RoleTypeDashboard";
+import CommunityForums from "../Component/CommunityForums/CommunityForums";
 
 
 export const router = createBrowserRouter([
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: 'AllTrainer',
         element: <AllTrainer></AllTrainer>
+      },
+      {
+        path: 'CommunityForums',
+        element: <CommunityForums></CommunityForums>
       },
       {
         path: '/trainerdetails/:id',
@@ -97,6 +102,10 @@ export const router = createBrowserRouter([
     </PrivateRoute>,
     children: [
       // admin route
+      {
+        path: "",
+        element: <RoleTypeDashboard></RoleTypeDashboard>
+      },
       {
         path: "allnewslettersubscribers",
         element: <AdminRoute><AllNewsletterSubscribers></AllNewsletterSubscribers>,</AdminRoute>

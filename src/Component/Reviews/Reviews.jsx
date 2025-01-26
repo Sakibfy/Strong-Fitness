@@ -24,8 +24,8 @@ const [reviews, setReviews] = useState([]);
 
 
   return (
-    <div className="m-3 bg-black text-white">
-      <h2 className="md:text-3xl text-xl font-bold italic md:py-2 mb-2">WHAT CUTOMERS SAY</h2>
+    <div className="m-3 bg-black rounded-xl text-white">
+      <h2 className="md:text-3xl text-xl font-bold italic md:py-2 my-2 text-center">WHAT CUTOMERS SAY</h2>
       <section>
       <Swiper pagination={{
           type: 'fraction',
@@ -41,7 +41,7 @@ const [reviews, setReviews] = useState([]);
               
               <div className="md:flex md:w-full md:p-10">
                 <div className="md:w-1/2 ">
-                  <img className=" pl-3" src={review.photo} alt="" /></div>
+                  <img className=" pl-16" src={review.photo} alt="" /></div>
 
                  <div className="flex flex-col   md:w-1/2 md:mt-44 p-5 border-l-4 border-lime-400">
                 <Rating className=""

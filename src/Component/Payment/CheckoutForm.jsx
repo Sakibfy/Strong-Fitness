@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
+import PropTypes from "prop-types";
 
 
 const CheckoutForm = ({price, trainerName,memberShipName, selectedSlot, name, photoURL, trainerId,skills}) => {
@@ -128,4 +129,16 @@ const CheckoutForm = ({price, trainerName,memberShipName, selectedSlot, name, ph
   );
 };
 
+
+CheckoutForm.propTypes = {
+  trainerName: PropTypes.element,
+  price: PropTypes.element,
+  memberShipName: PropTypes.element,
+  selectedSlot: PropTypes.element,
+  name: PropTypes.element,
+  photoURL: PropTypes.element,
+  trainerId: PropTypes.element,
+  skills: PropTypes.element,
+
+}
 export default CheckoutForm;

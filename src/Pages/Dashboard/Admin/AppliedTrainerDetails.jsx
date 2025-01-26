@@ -1,18 +1,21 @@
-import axios from "axios";
+
 import { useLoaderData, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { toast } from "react-toastify";
 
 
 const AppliedTrainerDetails = () => {
   const trainer = useLoaderData();
  
-//  const navigate = useNavigate();
+ const navigate = useNavigate();
 const axiosSecure = useAxiosSecure()
   
   console.log(trainer._id);
 
   const handleConfirm = async () => {
     const res = axiosSecure.patch(`alltrainer/${trainer._id}`)
+    toast('Trainer Added')
+    navigate('/alltrainer')
     console.log('confrom');
      return res.data
    

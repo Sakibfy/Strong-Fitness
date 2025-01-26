@@ -16,9 +16,15 @@ const {user} = useAuth() // Replace with actual user context
     age: "",
     profileImage: null,
     skills: [],
+    yearsOfExperience: ' ',
     availableSlots: [],
-    availableTime: "",
-    otherInfo: "",
+    availableTime: " ",
+    otherInfo: " ",
+     socialLinks: [
+    { platform: "instagram", url: "https://instagram.com/sophia" },
+    { platform: "linkedin", url: "https://linkedin.com/in/sophia" },
+    { platform: "facebook", url: "https://facebook.com/sophia" },
+  ],
   });
 
   // console.log(formData);
@@ -88,10 +94,15 @@ const {user} = useAuth() // Replace with actual user context
           profileImage: null,
           skills: '',
           availableSlots: '',
-          availableTime: "",
-          otherInfo: "",
+          availableTime: " ",
+          otherInfo: " ",
           statue: "pending",
-          yearsOfExperience: ''
+          yearsOfExperience: '',
+           socialLinks: [
+    { platform: "instagram", url: "https://instagram.com/sophia" },
+    { platform: "linkedin", url: "https://linkedin.com/in/sophia" },
+    { platform: "facebook", url: "https://facebook.com/sophia" },
+  ],
         });
         document.getElementById("image").value = ""; // Reset file input
         setStatus("pending");
@@ -142,6 +153,18 @@ const {user} = useAuth() // Replace with actual user context
           placeholder="Enter your age"
           required
         />
+        <label className="block mb-2">
+Experience</label>
+        <input
+          type="number"
+          name="yearsOfExperience"
+          value={formData.yearsOfExperience}
+          onChange={handleInputChange}
+          className="w-full mb-4 p-2 border rounded"
+          placeholder="
+yearsOfExperience"
+          required
+        />
 
         {/* Profile Image */}
         <label className="block mb-2">Profile Image</label>
@@ -165,16 +188,6 @@ const {user} = useAuth() // Replace with actual user context
           onChange={(selected) => handleSelectChange(selected, "skills")}
           className="mb-4"
         />
-        <label className="block mb-2">yearsOfExperience</label>
-        <Select
-          isMulti
-          options={skillsOptions}
-          value={skillsOptions.filter((option) =>
-            formData.skills.includes(option.value)
-          )}
-          onChange={(selected) => handleSelectChange(selected, "yearsOfExperience")}
-          className="mb-4"
-        />
 
         {/* Available Days */}
         <label className="block mb-2">Available Days</label>
@@ -182,9 +195,9 @@ const {user} = useAuth() // Replace with actual user context
           isMulti
           options={daysOptions}
           value={daysOptions.filter((option) =>
-            formData.availableDays.includes(option.value)
+            formData.availableSlots.includes(option.value)
           )}
-          onChange={(selected) => handleSelectChange(selected, "availableDays")}
+          onChange={(selected) => handleSelectChange(selected, "availableSlots")}
           className="mb-4"
         />
 

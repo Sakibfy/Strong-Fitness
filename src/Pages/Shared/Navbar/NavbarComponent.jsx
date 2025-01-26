@@ -18,8 +18,9 @@ export function NavbarComponent() {
     }
   const link = <>
            <NavLink to={'/'}><li className="text-white text-[17px] italic font-bold">Home</li></NavLink>
-           <NavLink to={'/AllTrainer'}><li className="text-white text-[17px] italic font-bold">All Trainer</li></NavLink>
-    <NavLink to={'/AllClasses'}> <li className="text-white text-[17px] italic font-bold">All Classes</li></NavLink>
+           <NavLink to={'/allTrainer'}><li className="text-white text-[17px] italic font-bold">All Trainer</li></NavLink>
+    <NavLink to={'/allClasses'}> <li className="text-white text-[17px] italic font-bold">All Classes</li></NavLink>
+    <NavLink to={'/communityForums'}> <li className="text-white text-[17px] italic font-bold">Forums</li></NavLink>
 
      <Link to={'/dashboard'}> <li className="text-white text-[17px] italic font-bold">Dashboard</li></Link> 
      

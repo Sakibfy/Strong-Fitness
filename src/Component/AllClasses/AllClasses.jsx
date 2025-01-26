@@ -31,7 +31,8 @@ const AllClasses = () => {
         </div>
     ))}
         
-    </div>
+      </div>
+      
 </div>
   );
 };

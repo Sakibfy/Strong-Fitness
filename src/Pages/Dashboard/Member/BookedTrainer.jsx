@@ -51,9 +51,9 @@ const BookedTrainer = ({ trainer }) => {
       <div className="bg-white shadow-md rounded p-4 mb-6">
         <h3 className="text-lg font-bold">Classes Offered:</h3>
         <ul className="list-disc ml-6">
-          {trainer.skills?.map((cls, index) => (
+          {/* {trainer.classes.map((cls, index) => (
             <li key={index}>{cls}</li>
-          ))}
+          ))} */}
         </ul>
       </div>
 

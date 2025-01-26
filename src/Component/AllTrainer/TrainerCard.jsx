@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-
+import PropTypes from 'prop-types'
 
 const TrainerCard = ({ trainer }) => {
   
-
+console.log(trainer);
   return (
      <div className="p-2  bg-white shadow-md rounded-lg ">
       {/* Profile Image */}
@@ -16,7 +16,7 @@ const TrainerCard = ({ trainer }) => {
       <h3 className="text-xl font-semibold text-center mt-2">{trainer.fullName}</h3>
       {/* Years of Experience */}
       <p className="text-sm text-gray-600 text-center">
-        {trainer?.yearsOfExperience}
+       Experience: {trainer?.yearsOfExperience}
       </p>
       {/* Social Icons */}
       <div className="flex justify-center mt-3 space-x-3">
@@ -34,17 +34,13 @@ const TrainerCard = ({ trainer }) => {
       </div>
       {/* Available Slots */}
       <p className="text-center mt-3">
-        <span className="font-semibold">Available Slots:</span>
+        <span className="font-semibold"></span>
         <div className="mt-2">
-          {trainer?.availableSlots?.map((slot, index) => (
-            <div key={index} className="text-sm ml-28  sm:ml-48 md::ml-36 text-left text-gray-700">
-              {slot}
-            </div>
-          ))}
+         
         </div>
       </p>
       {/* Know More Button */}
-      <Link  to={`/trainerdetails/${trainer._id}`}>
+      <Link  to={`/trainerdetails/${trainer?._id}`}>
         <button
        
         className="w-8/12 mx-auto flex flex-col items-center mt-4 bg-lime-600 text-white py-2 rounded-lg hover:bg-lime-500 duration-300"
@@ -54,5 +50,11 @@ const TrainerCard = ({ trainer }) => {
     </div>
   );
 };
+
+
+TrainerCard.propTypes = {
+  trainer: PropTypes.element,
+}
+
 
 export default TrainerCard;
