@@ -1,12 +1,13 @@
 import  { useState } from "react";
-
-import axios from "axios";
 import useRole from "../../../hooks/useRole";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const AddNewForum = () => {
   const { user } = useAuth();
+  const navigate = useNavigate()
   const axiosPublic = useAxiosPublic();
   const [role] = useRole()
   const [forum, setForum] = useState({
@@ -31,9 +32,9 @@ const AddNewForum = () => {
 
     try {
       const response = await axiosPublic.post("/forums", newForum);
-      
+      toast.success("Forum added successfully!");
+     navigate('/CommunityForums')
       if (response.status === 201) {
-        alert("Forum added successfully!");
         setForum({ title: "", description: "", tags: [] });
       }
     } catch (error) {
