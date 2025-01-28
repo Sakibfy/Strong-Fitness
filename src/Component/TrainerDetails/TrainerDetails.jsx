@@ -7,35 +7,39 @@ const TrainerDetails = () => {
   const trainer = useLoaderData();
  const { id } = useParams(); // Trainer ID from the route
   const navigate = useNavigate();
-
-
-console.log(trainer);
+  
+// console.log(trainer);
 const handleSlotClick = (slot) => {
     navigate(`/trainer/${id}/book`, {state: {
-        trainerName: trainer.name,
+        trainerName: trainer.fullName,
         selectedSlot: slot,
         skills: trainer.skills,
         trainerId: id,
+        availableTime: trainer.availableTime,
       },  });
     
   };
 
-  console.log(trainer.skills);
+  
 // Redirect to Become a Trainer page
   const handleBecomeTrainerClick = () => {
     navigate("/become-a-trainer");
   };
+
+
   return (
    <div className="container mx-auto px-6 py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Trainer Information Section */}
-        <div className="bg-white shadow-md rounded-lg p-6">
+        <div className="bg-white shadow-md rounded-sm p-6">
           <img
             src={trainer.profileImage}
             alt={trainer.fullName}
-            className="w-48 h-48 mx-auto rounded-full object-contain"
+            className="w-48 h-48 mx-auto  object-contain"
           />
-          <h1 className="text-3xl font-bold text-center mt-4">{trainer.name}</h1>
+          <h1 className="text-3xl font-bold text-center mt-4">{trainer.fullName}</h1>
+          <h1 className="text-xl font-bold text-center mt-4">Age:{trainer.age}</h1>
+          <h1 className="text-xl font-bold text-center mt-4">Email:{trainer.email}</h1>
           <p className="text-gray-700 text-center mt-2">{trainer.
              otherInfo}</p>
           {/* <p className="text-gray-700 text-center mt-2">{trainer.skills}</p> */}
@@ -58,14 +62,15 @@ const handleSlotClick = (slot) => {
           <h2 className="text-2xl font-bold mb-4">Available Slots</h2>
           <div className="space-y-4">
              {trainer.availableSlots.map((slot, index) => (
-              <button
-                key={index}
-                onClick={() => handleSlotClick(slot)}
-                className="mx-3 bg-lime-700 text-white py-2 px-4 rounded-lg hover:bg-lime-600 transition duration-200"
+               <div onClick={() => handleSlotClick(slot)} className="mx-3 bg-lime-700 text-white py-2 px-4 rounded-lg hover:bg-lime-600 transition duration-200 inline-block cursor-pointer" key={index}>
+                  <button
+                
               >
                 {slot}
               </button> 
-            ))}
+              <span className="ml-3 ">{ trainer.availableTime}</span>
+             </div>
+             ))}
           </div>
         </div>
       </div>

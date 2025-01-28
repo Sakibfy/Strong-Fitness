@@ -10,10 +10,10 @@ const AppliedTrainerDetails = () => {
  const navigate = useNavigate();
 const axiosSecure = useAxiosSecure()
   
-  console.log(trainer._id);
+  console.log(trainer.email);
 
   const handleConfirm = async () => {
-    const res = axiosSecure.patch(`alltrainer/${trainer._id}`)
+    const res = axiosSecure.patch(`alltrainer/${trainer.email}`)
     toast('Trainer Added')
     navigate('/alltrainer')
     console.log('confrom');

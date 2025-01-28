@@ -1,10 +1,24 @@
+import { toast } from "react-toastify";
 import useAuth from "../../../hooks/useAuth";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 
 const Newsletter = () => {
   const { user } = useAuth() 
-  const handleSubscribe = () => {
-    console.log('handleSubscribe');
+  // console.log(user);
+  const axiosPublic = useAxiosPublic()
+  const handleSubscribe = async () => {
+
+    const subdata = {
+      user: user?.email,
+      name: user?.displayName,
+      subscribed: new Date().toISOString(),
+      
+    }
+
+    const res = await axiosPublic.post('/subscribe', subdata)
+    toast.success('Subscribed')
+    return res.data
   }
   return (
     <div>

@@ -2,14 +2,12 @@
 "use client";
 import { LuLogOut } from "react-icons/lu";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
-import { Link, Navigate, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
-import useRole from "../../../hooks/useRole";
 
 export function NavbarComponent() {
   const { user, logOut } = useAuth();
-  //  const [role] = useRole()
-  // console.log(role);
+  
   const handleLogOut = () => {
         logOut()
          .then(() => { })
@@ -17,12 +15,11 @@ export function NavbarComponent() {
         
     }
   const link = <>
-           <NavLink to={'/'}><li className="text-white text-[17px] italic font-bold">Home</li></NavLink>
-           <NavLink to={'/allTrainer'}><li className="text-white text-[17px] italic font-bold">All Trainer</li></NavLink>
-    <NavLink to={'/allClasses'}> <li className="text-white text-[17px] italic font-bold">All Classes</li></NavLink>
-    <NavLink to={'/communityForums'}> <li className="text-white text-[17px] italic font-bold">Forums</li></NavLink>
-
-     <Link to={'/dashboard'}> <li className="text-white text-[17px] italic font-bold">Dashboard</li></Link> 
+  <NavLink to={'/'}><li className="text-white text-[17px] italic font-bold  hover:scale-x-110 duration-150">Home</li></NavLink>
+  <NavLink to={'/allTrainer'}><li className="text-white text-[17px] italic font-bold hover:scale-x-110 duration-150">All Trainer</li></NavLink>
+  <NavLink to={'/allClasses'}> <li className="text-white text-[17px] italic font-bold  hover:scale-x-110 duration-150">All Classes</li></NavLink>
+  <NavLink to={'/communityForums'}> <li className="text-white text-[17px] italic font-bold hover:scale-x-110 duration-150 ">Forums</li></NavLink>
+  <Link to={'/dashboard'}> <li className="text-white text-[17px] italic font-bold mb-1 hover:scale-x-110 duration-150">Dashboard</li></Link> 
      
 
   </>

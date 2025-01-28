@@ -18,6 +18,9 @@ console.log(trainer);
       <p className="text-sm text-gray-600 text-center">
        Experience: {trainer?.yearsOfExperience}
       </p>
+      <p className="text-sm text-gray-600 text-center">
+       Age: {trainer?.age}
+      </p>
       {/* Social Icons */}
       <div className="flex justify-center mt-3 space-x-3">
         {trainer?.socialLinks?.map((link) => (

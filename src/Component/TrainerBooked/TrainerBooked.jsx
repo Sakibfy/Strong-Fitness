@@ -7,9 +7,10 @@ import { toast } from "react-toastify";
 const TrainerBooked = () => {
   const [selectedMembership, setSelectedMembership] = useState([]);
   const location = useLocation();
-  const { trainerName, selectedSlot, skills,trainerId } = location.state || {};
+  const { trainerName, selectedSlot, skills,trainerId,availableTime } = location.state || {};
   const {user} = useAuth()
  
+  console.log(availableTime);
   console.log(skills
 );
   const navigate = useNavigate();
@@ -63,25 +64,24 @@ const TrainerBooked = () => {
    
     setSelectedMembership(membership);
     // Prepare the data to send to the backend
-    const data = {
-      trainerName,
-      selectedSlot: selectedSlot,
+    // const data = {
+    //   trainerName,
+    //   selectedSlot: selectedSlot,
+    //   skills,
+    //   memberShipName,
+    //   price: parseInt(price),
+    //   email: user.email,
+    //   name: user.displayName,
+    //   photoURL: user.photoURL,
+    //   trainerId,
+    //   availableTime,
+    // };
+
+    
+    
+    navigate("/payment", {
+      state: {
       skills,
-      memberShipName,
-      price: parseInt(price),
-      email: user.email,
-      name: user.displayName,
-      photoURL: user.photoURL,
-      trainerId,
-    };
-
-    console.log(data.skills);
-   
-
-navigate("/payment", {
-   state: {
-     skills
-,
       trainerName,
       memberShipName,
       selectedSlot,
@@ -90,12 +90,14 @@ navigate("/payment", {
       name: user.displayName,
       photoURL: user.photoURL,
       trainerId,
-      },
-});
+      availableTime,
+    },
+  });
 }
 
 
-
+console.log(availableTime);
+console.log(price);
 
   
 

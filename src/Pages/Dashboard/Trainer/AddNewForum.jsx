@@ -95,7 +95,7 @@ const AddNewForum = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
+          className="bg-lime-500 text-white px-4 py-2 rounded hover:bg-lime-600 transition duration-200"
         >
           Add Forum
         </button>

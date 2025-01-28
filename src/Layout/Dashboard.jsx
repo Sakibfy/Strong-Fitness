@@ -21,7 +21,7 @@ const [role, isLoading] = useRole()
      <div className="flex ">
       {/* left side start*/}
  
-      
+     
       <div className=" md:w-60 w-36 min-h-screen bg-slate-400 p-2 text-white">
         <Link to={'/'}>
           <span className="italic  items-center text-center md:text-3xl text-lg  font-bold dark:text-white  text-white uppercase"> Strong <span className="mt-2 border-b-4 border-lime-400">Fitness</span> </span>

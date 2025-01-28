@@ -10,7 +10,7 @@ const Team = () => {
 const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/team')
+        fetch('https://strong-max-server.vercel.app/team')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

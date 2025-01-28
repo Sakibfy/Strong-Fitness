@@ -21,8 +21,7 @@ const AllClasses = () => {
           >
             <img src={classItem.image} className="rounded-lg w-[300px] h-[250px] cursor-pointer hover:scale-x-105 duration-500 object-cover" alt="" />
             <div className="text-left text-white mt-4 space-y-2">           
-              <h3 className="text-xl">{classItem.name}</h3>     
-              <h3 className="text-xl">{classItem._id}</h3>     
+              <h3 className="text-xl">{classItem.name}</h3>         
               <h3 className="text-[14px] ">{classItem.details}</h3> 
               <h3 className="text-[20px] ">Category: {classItem.category}</h3> 
               <h3 className="underline cursor-pointer"> {classItem.trainerName}</h3>

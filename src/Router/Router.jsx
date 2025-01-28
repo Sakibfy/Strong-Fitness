@@ -9,9 +9,7 @@ import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import AllClasses from "../Component/AllClasses/AllClasses";
 import AllTrainer from "../Component/AllTrainer/AllTrainer";
-
 import Dashboard from "../Layout/Dashboard";
-
 import AddNewClass from "../Pages/Dashboard/Admin/AddNewClass";
 import PrivateRoute from "./PrivateRoute";
 import TrainerDetails from "../Component/TrainerDetails/TrainerDetails";
@@ -60,7 +58,7 @@ export const router = createBrowserRouter([
       {
         path: '/trainerdetails/:id',
         element: <TrainerDetails></TrainerDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/alltrainer/${params.id}`)
+        loader: ({params}) => fetch(`https://strong-max-server.vercel.app/alltrainer/${params.id}`)
       },
       {
         path: "/trainer/:id/book",
@@ -122,7 +120,7 @@ export const router = createBrowserRouter([
         path: 'appliedtrainertetails/:id',
          element: <AdminRoute><AppliedTrainerDetails></AppliedTrainerDetails>,
          </AdminRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/alltrainer/${params.id}`)
+        loader: ({params}) => fetch(`https://strong-max-server.vercel.app/alltrainer/${params.id}`)
       },
       {
         path: 'addNewClass',
@@ -130,16 +128,16 @@ export const router = createBrowserRouter([
       },
       {
         path: 'balance',
-        element: <AdminRoute><Balance></Balance>,</AdminRoute>
+        element: <AdminRoute><Balance></Balance></AdminRoute>
       },
       // trainer route
       {
         path: 'manageslots',
-        element: <TrainerRoute><ManageSlots></ManageSlots>,</TrainerRoute>
+        element: <TrainerRoute><ManageSlots></ManageSlots></TrainerRoute>
       },
       {
         path: 'AddNewslot',
-        element: <TrainerRoute><AddNewSlot></AddNewSlot>,</TrainerRoute>
+        element: <TrainerRoute><AddNewSlot></AddNewSlot></TrainerRoute>
       },
       {
         path: 'AddnewForum',

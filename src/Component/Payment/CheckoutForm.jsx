@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import PropTypes from "prop-types";
 
 
-const CheckoutForm = ({price, trainerName,memberShipName, selectedSlot, name, photoURL, trainerId,skills}) => {
+const CheckoutForm = ({price, trainerName,memberShipName, selectedSlot, name, photoURL, trainerId,skills,availableTime,userName}) => {
   const stripe = useStripe();
   const navigate = useNavigate();
   const [clintSecret, setClintSecret] = useState('');
@@ -18,7 +18,7 @@ const CheckoutForm = ({price, trainerName,memberShipName, selectedSlot, name, ph
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth()
  
-
+console.log(userName);
 
   useEffect(() => {
       axiosSecure.post('/create-payment-intent', {price})
@@ -84,12 +84,14 @@ const CheckoutForm = ({price, trainerName,memberShipName, selectedSlot, name, ph
          selectedSlot: selectedSlot,
          skills,
          memberShipName,
-      name: user.displayName,
-      photoURL: user.photoURL,
-      trainerId,
+        name: user.displayName,
+        photoURL: user.photoURL,
+          trainerId,
+          availableTime,
+         userName,
           
         }
-        console.log(paymentInfo);
+        console.log(availableTime);
         const res = await axiosSecure.post('/payments', paymentInfo)
         console.log('payment saved', res.data);
         toast.success('Thank you for the payment')

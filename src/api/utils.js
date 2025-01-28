@@ -16,12 +16,3 @@ export const imageUpload = async imageData => {
 
 
 
-
-// export const saveUser = async user => {
-//    axios.post(`http://localhost:5000/users/${user?.email}`, {
-//         name: user?.displayName,
-//         email: user?.email,
-//         image: user?.photoURL,
-        
-//     })
-// }
