@@ -26,11 +26,12 @@ const Home = () => {
       <div className="my-12 w-10/12 mx-auto h-1/4">
         <HoemForum></HoemForum>
       </div>
-      <div className="my-12 w-10/12 mx-auto h-1/4">
-        <Newsletter></Newsletter>
-     </div>
+      
       <div className="my-12 w-10/12 mx-auto">
          <Team></Team>
+      </div>
+      <div className="my-12 w-10/12 mx-auto h-1/4">
+        <Newsletter></Newsletter>
      </div>
       
     </div>

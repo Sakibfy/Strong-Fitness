@@ -8,7 +8,7 @@ import img3 from '../../../assets/Run-Man.jpg'
 const Featured = () => {
   return (
     <div className="md:mb-28" >
-      <h2 className="md:text-5xl text-3xl font-bold italic text-center pb-6">Our Featured</h2>
+      <h2 className="md:text-5xl text-3xl font-bold text-center pb-6">Our Featured</h2>
       <div className="md:flex md:gap-10 gap-10 md:col-span-3 col-span-1 m-3 ">
         {/* card 1 */}
          <div className="md:-mb-16 my-5 hover:scale-105 duration-500 overflow-hidden rounded border-t-4  border-l-8 border-gray-700 bg-white text-slate-500 shadow-md shadow-slate-200 space-y-2">
@@ -35,7 +35,7 @@ const Featured = () => {
         </div>
         </div>
         {/* card 2 */}
-         <div className="md:my-0  hover:scale-105 duration-500 my-5 overflow-hidden rounded bg-white text-slate-500 shadow-md border-b-8 border-r-4 border-[#c3f73a] shadow-slate-200">
+         <div className="md:my-0  hover:scale-105 duration-500 my-5 overflow-hidden rounded bg-white text-slate-500 shadow-md border-b-8 border-r-4 border-gray-700 shadow-slate-200">
         {/*  <!--  Image --> */}
         <figure  className="w-[400px] object-cover mx-auto">
           <img
@@ -56,7 +56,7 @@ const Featured = () => {
         </div>
         </div>
         {/* card 3 */}
-         <div className="md:-mb-16  hover:scale-105 duration-500  border-t-8 border-r-4 border-[#fee036] my-5 overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200">
+         <div className="md:-mb-16  hover:scale-105 duration-500  border-t-8 border-r-4 border-gray-700 my-5 overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200">
         {/*  <!--  Image --> */}
         <figure  className="w-[420px] mx-auto">
           <img

@@ -1,10 +1,10 @@
-import { FaUserCircle } from "react-icons/fa";
+import { FaDollarSign, FaUserCircle, FaUsers } from "react-icons/fa";
 import { Link,  NavLink, Outlet } from "react-router-dom";
-
+import { FaNewspaper } from "react-icons/fa6";
 import useRole from "../hooks/useRole";
 import Loding from "../Component/Loading/Loding";
-
-
+import { VscGitStashApply } from "react-icons/vsc";
+import { BsBuildingFillAdd } from "react-icons/bs";
 
 
 
@@ -31,11 +31,12 @@ const [role, isLoading] = useRole()
     {/* share dashboard start */}
 
 {role === 'admin' && (<>
- <li><NavLink to='/dashboard/allNewslettersubscribers'> Newsletter </NavLink></li>
- <li><NavLink to='/dashboard/adminalltrainer'> Trainers</NavLink></li>
- <li><NavLink to='/dashboard/appliedTrainer'>Applied Trainer</NavLink></li>
- <li><NavLink to='/dashboard/balance'>Balance</NavLink></li>
- <li><NavLink to='/dashboard/addnewclass'>Add new Class</NavLink></li>
+ <li className="flex  gap-3"><FaNewspaper  className="text-2xl text-lime-300 "/> <NavLink to='/dashboard/allNewslettersubscribers'> Newsletter </NavLink></li>
+ <li className="flex gap-3"><FaUsers className="text-2xl text-lime-300 "/> <NavLink to='/dashboard/adminalltrainer'> Trainers</NavLink></li>
+ 
+ <li className="flex gap-3"> <VscGitStashApply className="text-2xl text-lime-300 "/><NavLink to='/dashboard/appliedTrainer'>Applied Trainer</NavLink></li>
+ <li className="flex gap-3"> <FaDollarSign className="text-2xl text-lime-300 " /><NavLink to='/dashboard/balance'>Balance</NavLink></li>
+ <li className="flex gap-3"> <BsBuildingFillAdd  className="text-lime-300 text-2xl"/><NavLink to='/dashboard/addnewclass'>Add new Class</NavLink></li>
  
    </>
          
@@ -48,7 +49,7 @@ const [role, isLoading] = useRole()
    </>
   )}
 {role === 'member' && (<>
-  <li><NavLink to='/dashboard/ProfilePage'><FaUserCircle className="block" /> Profile Page</NavLink> </li>
+  <li className="flex gap-3 "> <FaUserCircle className="text-2xl" /><NavLink to='/dashboard/ProfilePage'> Profile Page</NavLink> </li>
   <li><NavLink to='/dashboard/ActivityLogpage'>Activity Log page</NavLink> </li>
   <li><NavLink to='/dashboard/bookedTrainerPage'>Booked Trainer</NavLink> </li>
  

@@ -23,13 +23,13 @@ console.log(forums);
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       <h1 className="text-2xl font-bold mb-4">Community Forums</h1>
-      <div className="bg-white shadow-md rounded p-6">
+      <div className="bg-white shadow-md rounded p-6 ">
         {forums.length === 0 ? (
           <p className="text-gray-600">No forums available.</p>
         ) : (
-          <ul className="space-y-4">
+          <div className="space-y-4 ">
             {forums.map((forum) => (
-              <li key={forum._id} className="p-4 border rounded">
+              <li key={forum._id} className="p-4  border-red-500 border rounded">
                 <h2 className="text-xl font-semibold">{forum.title}</h2>
                 <p className="text-gray-800">{forum.description}</p>
                 {forum.tags.map((tag, index) => (
@@ -43,7 +43,7 @@ console.log(forums);
                 </p>
               </li>
             ))}
-          </ul>
+          </div>
         )}
       </div>
     </div>

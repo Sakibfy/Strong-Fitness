@@ -30,7 +30,7 @@ export function NavbarComponent() {
 
   return (
     
-      <Navbar fluid rounded className="mx-auto relative backdrop-blur-sm  bg-gray-900 h-[80px]  z-10 bg-opacity-30 w-full items-center text-center ">
+      <Navbar fluid rounded className="mx-auto border relative backdrop-blur-sm  bg-gray-900 h-[80px]  z-10 bg-opacity-30 w-full items-center text-center ">
      
        
         <Link to={'/'}>

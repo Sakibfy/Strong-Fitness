@@ -22,11 +22,11 @@ const Newsletter = () => {
   }
   return (
     <div>
-      <section className="py-6 bg-[#1f2937] text-white rounded-xl">
+      <section className="py-6  text-black rounded-xl">
 	<div className="container mx-auto flex flex-col justify-center p-4 space-y-8 md:p-10 lg:space-y-0 lg:space-x-12 lg:justify-between lg:flex-row">
 		<div className="flex flex-col space-y-4 text-center lg:text-left">
-			<h1 className="text-5xl font-bold leading-none">Stay in the loop</h1>
-			<p className="text-lg">Doloribus consectetur quasi ipsa quo neque culpa blanditiis ducimus recusandae a veritatis optio cumque, in harum ad nam!</p>
+			<h1 className="text-5xl font-bold leading-none">Newsletter Section </h1>
+			<p className="text-lg">Let’s Stay Connected – Subscribe Now!</p>
 		</div>
 		<div className="flex flex-row items-center self-center justify-center flex-shrink-0 shadow-md lg:justify-end">
 			<div className="flex flex-row">
