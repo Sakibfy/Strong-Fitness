@@ -1,4 +1,4 @@
-import { FaDollarSign, FaUserCircle, FaUsers } from "react-icons/fa";
+import { FaDollarSign, FaRegNewspaper, FaUserCircle, FaUsers } from "react-icons/fa";
 import { Link,  NavLink, Outlet } from "react-router-dom";
 import { FaNewspaper } from "react-icons/fa6";
 import useRole from "../hooks/useRole";
@@ -18,25 +18,25 @@ const [role, isLoading] = useRole()
  
 
   return (
-     <div className="flex ">
+     <div className="md:flex ">
       {/* left side start*/}
  
      
-      <div className=" md:w-60 w-36 min-h-screen bg-slate-400 p-2 text-white">
+      <div className=" md:w-60  md:min-h-screen h-full w-full bg-slate-400 p-2 text-white">
         <Link to={'/'}>
-          <span className="italic  items-center text-center md:text-3xl text-lg  font-bold dark:text-white  text-white uppercase"> Strong <span className="mt-2 border-b-4 border-lime-400">Fitness</span> </span>
+          <span className="italic  items-center text-center md:text-2xl text-[16px]  font-bold dark:text-white  text-white uppercase"> Strong <span className="mt-2 border-b-4 border-lime-400">Fitness</span> </span>
         </Link>
           
-  <ul className="menu p-4 md:p-8   space-y-4 mt-3 uppercase ">
+  <ul className="menu p-4 md:p-8 md:flex md:flex-col justify-normal  space-y-4 mt-3 uppercase ">
     {/* share dashboard start */}
 
 {role === 'admin' && (<>
- <li className="flex  gap-3"><FaNewspaper  className="text-2xl text-lime-300 "/> <NavLink to='/dashboard/allNewslettersubscribers'> Newsletter </NavLink></li>
- <li className="flex gap-3"><FaUsers className="text-2xl text-lime-300 "/> <NavLink to='/dashboard/adminalltrainer'> Trainers</NavLink></li>
+ <li className="flex text-[13px] gap-2 md:gap-3"><FaRegNewspaper  className="text-2xl  text-lime-300 "/> <NavLink to='/dashboard/allNewslettersubscribers'> Newsletter </NavLink></li>
+ <li className="flex  text-[13px] gap-2 md:gap-3"><FaUsers className="text-2xl text-lime-300 "/> <NavLink to='/dashboard/adminalltrainer'> Trainers</NavLink></li>
  
- <li className="flex gap-3"> <VscGitStashApply className="text-2xl text-lime-300 "/><NavLink to='/dashboard/appliedTrainer'>Applied Trainer</NavLink></li>
- <li className="flex gap-3"> <FaDollarSign className="text-2xl text-lime-300 " /><NavLink to='/dashboard/balance'>Balance</NavLink></li>
- <li className="flex gap-3"> <BsBuildingFillAdd  className="text-lime-300 text-2xl"/><NavLink to='/dashboard/addnewclass'>Add new Class</NavLink></li>
+ <li className="flex text-[13px] gap-2 md:gap-3"> <VscGitStashApply className="text-2xl text-lime-300 "/><NavLink to='/dashboard/appliedTrainer'>Applied Trainer</NavLink></li>
+ <li className="flex text-[13px] gap-2 md:gap-3"> <FaDollarSign className="text-2xl text-lime-300 " /><NavLink to='/dashboard/balance'>Balance</NavLink></li>
+ <li className="flex text-[13px] gap-2 md:gap-3"> <BsBuildingFillAdd  className="text-lime-300 text-2xl"/><NavLink to='/dashboard/addnewclass'>Add new Class</NavLink></li>
  
    </>
          
@@ -49,7 +49,7 @@ const [role, isLoading] = useRole()
    </>
   )}
 {role === 'member' && (<>
-  <li className="flex gap-3 "> <FaUserCircle className="text-2xl" /><NavLink to='/dashboard/ProfilePage'> Profile Page</NavLink> </li>
+  <li className="flex text-[13px] gap-2 md:gap-3 "> <FaUserCircle className="text-2xl" /><NavLink to='/dashboard/ProfilePage'> Profile Page</NavLink> </li>
   <li><NavLink to='/dashboard/ActivityLogpage'>Activity Log page</NavLink> </li>
   <li><NavLink to='/dashboard/bookedTrainerPage'>Booked Trainer</NavLink> </li>
  

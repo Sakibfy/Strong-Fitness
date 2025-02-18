@@ -30,16 +30,16 @@ export function NavbarComponent() {
 
   return (
     
-      <Navbar fluid rounded className="mx-auto border relative backdrop-blur-sm  bg-gray-900 h-[80px]  z-10 bg-opacity-30 w-full items-center text-center ">
+      <Navbar  className="mx-auto  relative backdrop-blur-sm  bg-gray-900 h-[80px]  z-10 bg-opacity-30  items-center text-center ">
      
        
         <Link to={'/'}>
-          <span className="italic items-center text-center text-3xl font-bold dark:text-white  text-white uppercase"> Strong <span className="border-b-4 border-lime-400">Fitness</span> </span>
+          <span className="italic items-center text-center md:text-2xl lg:text-3xl sm:text-[22px] text-[18px] font-bold md:ml-9  text-white uppercase"> Strong <span className="border-b-4 border-lime-400">Fitness</span> </span>
         </Link>
      
       
-      <div className=" md:order-2  flex gap-3 md:mr-20">
-        
+      <div className=" md:order-2 rounded-3xl flex  gap-3 md:mr-20">
+
         {
           user ?
             <Dropdown
@@ -59,12 +59,13 @@ export function NavbarComponent() {
             </Dropdown>
             :
            <>
-             <NavLink to={'/login'}> <button className=" hover:bg-lime-400 duration-500  bg-lime-300   rounded-md font-bold text-black px-9 py-3 border-lime-300 my-2 ">Login</button></NavLink>
-             <NavLink to={'/registaion'}> <button className=" hover:bg-lime-400 duration-500  bg-lime-300   rounded-md font-bold text-black px-9 py-3 border-lime-300 my-2 ">Register</button></NavLink>
+     <NavLink to={'/login'}> <button className=" hover:bg-lime-400 duration-500  bg-lime-300   rounded-md md:font-bold text-black px-3 md:px-9 sm:py-3  py-2 border-lime-300 my-2 ">Login</button></NavLink>
+     <NavLink to={'/registaion'}> <button className=" hover:bg-lime-400 duration-500  bg-lime-300   rounded-md md:font-bold text-black px-3 md:px-9 md:py-3 py-2 border-lime-300 my-2 ">Register</button></NavLink>
           </>
          }
         
-        <Navbar.Toggle />
+        <Navbar.Toggle className="" />
+        
       </div>
       <Navbar.Collapse className="">
         {link}
