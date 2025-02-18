@@ -30,7 +30,7 @@ export function NavbarComponent() {
 
   return (
     
-      <Navbar  className="mx-auto  relative backdrop-blur-sm  bg-gray-900 h-[80px]  z-10 bg-opacity-30  items-center text-center ">
+      <Navbar  className="mx-auto  relative backdrop-blur-sm  bg-gray-900 md:h-[80px]  z-10 bg-opacity-30  items-center text-center ">
      
        
         <Link to={'/'}>
