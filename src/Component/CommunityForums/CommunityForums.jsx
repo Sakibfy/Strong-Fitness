@@ -21,11 +21,11 @@ const axiosPublic = useAxiosPublic()
 console.log(forums);
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">Community Forums</h1>
-      <div className="bg-white shadow-md rounded p-6 ">
+    <div className="p-6 bg-[#1b1b1b] min-h-screen">
+      <h1 className="md:text-4xl text-2xl font-bold text-white mb-4">Community Forums</h1>
+      <div className="bg-gray-300 shadow-md p-6 ">
         {forums.length === 0 ? (
-          <p className="text-gray-600">No forums available.</p>
+          <p className="text-gray-600 text-2xl text-center">No forums available.</p>
         ) : (
           <div className="space-y-4 ">
             {forums.map((forum) => (
