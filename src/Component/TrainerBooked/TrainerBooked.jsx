@@ -102,16 +102,16 @@ console.log(price);
   
 
   return (
-     <div className="container mx-auto px-6 py-10">
-     <div className="space-y-3 items-center flex flex-col mb-2">
-      <h1 className="text-center font-bold text-4xl">Booking Details</h1>
-      <p className="text-3xl">Trainer: {trainerName}</p>
-      <button className="text-2xl underline p-1 rounded-md">Slot: {selectedSlot}</button>
-      <p></p>
+     <div className="container bg-black  mx-auto px-6 py-10">
+     <div className="space-y-2 text-left text-white flex flex-col mb-2">
+      
+      <p className="text-3xl"> {trainerName}</p>
+      <p className="text-2xl text-left  p-1 rounded-md"> {selectedSlot}</p>
+     
       <ul>
         {skills
 ?.map((item, index) => (
-          <li className="list-disc mb-2 text-xl inline-block ml-4" key={index}>{item}</li>
+          <p className=" text-xl  mb-3" key={index}>{item}</p>
         ))}
       </ul>
     </div>

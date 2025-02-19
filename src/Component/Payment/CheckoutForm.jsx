@@ -110,7 +110,7 @@ console.log(userName);
         options={{
           style: {
             base: {
-              fontSize: '25px', 
+              fontSize: '17px', 
               color: '#424770',
               '::placeholder': {
                 color: '#aab7c4',
